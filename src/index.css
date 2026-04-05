@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Primary accent - warm rose/coral */
+  --color-accent: #f5a08a;
+  --color-accent-muted: #f5a08a40;
+  --color-accent-subtle: #f5a08a15;
+  
+  /* Secondary accent - soft teal */
+  --color-secondary: #6ee7b7;
+  --color-secondary-muted: #6ee7b740;
+  --color-secondary-subtle: #6ee7b715;
+  
+  /* Tertiary accent - soft blue */
+  --color-tertiary: #93c5fd;
+  --color-tertiary-muted: #93c5fd40;
+  --color-tertiary-subtle: #93c5fd15;
+  
+  /* Neutrals */
+  --color-surface: #0a0a0a;
+  --color-surface-elevated: #141414;
+  --color-surface-overlay: #1a1a1a;
+  --color-border: #262626;
+  --color-border-muted: #1f1f1f;
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #a3a3a3;
+  --color-text-tertiary: #737373;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .text-gradient-accent {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #fcd5ce 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-cool {
+    background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .card-elevated {
+    background: linear-gradient(180deg, var(--color-surface-elevated) 0%, var(--color-surface) 100%);
+    border: 1px solid var(--color-border-muted);
+  }
+  
+  .glow-accent {
+    box-shadow: 0 0 40px var(--color-accent-muted), 0 0 80px var(--color-accent-subtle);
+  }
+  
+  .glow-secondary {
+    box-shadow: 0 0 40px var(--color-secondary-muted), 0 0 80px var(--color-secondary-subtle);
+  }
+}
