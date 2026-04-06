@@ -12,6 +12,8 @@ export const Slide18GradeConstruct = () => {
     "Audience fit",
     "Explanation / defense",
     "Decision justification",
+    "AI supervision / auditing",
+    "Verification and correction",
   ];
 
   return (
@@ -34,7 +36,7 @@ export const Slide18GradeConstruct = () => {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ type: 'spring', stiffness: 150, damping: 20, delay: 0.2 }}
           className="card-glass p-8 rounded-2xl shadow-premium"
         >
           <div className="flex items-center gap-3 mb-6">
@@ -64,7 +66,7 @@ export const Slide18GradeConstruct = () => {
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ type: 'spring', stiffness: 150, damping: 20, delay: 0.4 }}
           className="card-glass-accent p-8 rounded-2xl glow-accent"
         >
           <div className="flex items-center gap-3 mb-6">
@@ -77,8 +79,9 @@ export const Slide18GradeConstruct = () => {
                 key={idx}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.5 + idx * 0.08 }}
-                className="bg-[var(--color-surface)] px-4 py-3 rounded-lg border border-[var(--color-border)] text-base font-light text-[var(--color-text-primary)]"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.5 + idx * 0.08 }}
+                className="bg-[var(--color-surface)] px-4 py-3 rounded-lg border border-[var(--color-border)] text-base font-light text-[var(--color-text-primary)] cursor-default"
               >
                 {dim}
               </motion.span>
@@ -94,8 +97,8 @@ export const Slide18GradeConstruct = () => {
         className="text-center max-w-3xl mx-auto"
       >
         <p className="text-2xl md:text-3xl text-[var(--color-text-primary)] font-extralight leading-snug tracking-[-0.01em]">
-          Assess the underlying competence,<br/>
-          <span className="text-gradient-accent font-light mt-3 inline-block">not the polish of the medium.</span>
+          Assess the competence, not the polish.<br/>
+          <span className="text-gradient-accent font-light mt-3 inline-block">That now includes judgment over machine-generated material.</span>
         </p>
       </motion.div>
     </div>

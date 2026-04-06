@@ -66,7 +66,7 @@ export const Slide16BeforeAfter = () => {
         className="text-center max-w-3xl mx-auto"
       >
         <p className="text-xl md:text-2xl text-[var(--color-text-secondary)] font-light leading-relaxed opacity-95">
-          The redesign makes <span className="text-[var(--color-text-primary)] font-medium">analysis, communication, judgment, and defense</span> more visible than a text-only submission can.
+          The redesign does not just add outputs — it makes <span className="text-[var(--color-text-primary)] font-medium">analysis, translation, defense, and judgment</span> independently visible.
         </p>
       </motion.div>
     </div>

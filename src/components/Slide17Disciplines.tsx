@@ -12,17 +12,17 @@ export const Slide17Disciplines = () => {
         className="text-center w-full mb-10"
       >
         <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
-          Portability
+          Same Evidence Logic
         </span>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
-          Different disciplines, different stacks
+          Different disciplines, same design principle
         </h2>
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
+        initial={{ opacity: 0, scale: 0.97, filter: 'blur(6px)' }}
+        animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+        transition={{ duration: 1.2, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
         className="w-full flex justify-center mb-8"
       >
         <img
@@ -39,9 +39,10 @@ export const Slide17Disciplines = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="text-center text-lg md:text-xl text-[var(--color-text-secondary)] font-light tracking-wide italic opacity-82"
+        className="text-center text-lg md:text-xl text-[var(--color-text-secondary)] font-light tracking-wide opacity-82"
       >
-        The principle stays the same; the stack changes with the discipline.
+        The evidence logic is stable; the stack changes with the construct.<br/>
+        <span className="text-[var(--color-text-primary)] font-normal italic">Critique, defense, and demonstration need not be confined to arts-based disciplines.</span>
       </motion.p>
     </div>
   );

@@ -26,17 +26,18 @@ export const Slide19ParticipantActivity = () => {
         <div className="flex flex-col gap-3 flex-1 md:max-w-[65%]">
           {[
             { number: "01", content: <>What is this task really trying to <span className="text-[var(--color-accent)] font-medium">reveal</span>?</> },
-            { number: "02", content: <>What does the current artifact fail to <span className="text-[var(--color-accent)] font-medium">show</span>?</> },
-            { number: "03", content: <>What 2–3 evidence forms would reveal that <span className="text-[var(--color-accent)] font-medium">better</span>?</> },
-            { number: "04", content: <>What is the smallest stack that still makes the competence <span className="text-[var(--color-accent)] font-medium">visible</span>?</> },
-            { number: "05", content: <>What would the rubric actually <span className="text-[var(--color-accent)] font-medium">reward</span>?</> },
+            { number: "02", content: <>Where would <span className="text-[var(--color-accent)] font-medium">oral defense or cross-representation</span> reveal more?</> },
+            { number: "03", content: <>Where could AI serve as a <span className="text-[var(--color-accent)] font-medium">rehearsal layer</span> before human judgment?</> },
+            { number: "04", content: <>What is the <span className="text-[var(--color-accent)] font-medium">smallest viable evidence stack</span> that makes competence visible?</> },
+            { number: "05", content: <>What would the rubric actually <span className="text-[var(--color-accent)] font-medium">reward</span> in that redesigned stack?</> },
           ].map((p, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 + idx * 0.12 }}
-              className="flex items-start gap-5 card-glass rounded-xl p-5 shadow-premium"
+              whileHover={{ x: 4 }}
+              transition={{ type: 'spring', stiffness: 150, damping: 20, delay: 0.3 + idx * 0.12 }}
+              className="flex items-start gap-5 card-glass rounded-xl p-5 shadow-premium cursor-default"
             >
               <span className="text-base font-mono text-[var(--color-accent)] opacity-50 mt-0.5 shrink-0">{p.number}</span>
               <p className="text-lg text-[var(--color-text-primary)] font-light leading-relaxed">{p.content}</p>
@@ -46,9 +47,9 @@ export const Slide19ParticipantActivity = () => {
 
         {/* Right column: support image */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
+          initial={{ opacity: 0, x: 20, scale: 0.97, filter: 'blur(6px)' }}
+          animate={{ opacity: 1, x: 0, scale: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1.2, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="hidden md:flex items-center justify-center flex-shrink-0 md:w-[30%]"
         >
           <img
@@ -68,7 +69,7 @@ export const Slide19ParticipantActivity = () => {
         transition={{ duration: 0.6, delay: 1.1 }}
         className="text-center text-lg text-[var(--color-text-secondary)] font-light tracking-wide mt-6 opacity-82"
       >
-        Pick one real assignment and sketch a 2–3 artifact stack.
+        Pick one real assignment and design a smallest viable evidence stack.
       </motion.p>
     </div>
   );

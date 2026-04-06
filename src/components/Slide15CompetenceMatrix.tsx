@@ -20,9 +20,9 @@ export const Slide15CompetenceMatrix = () => {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
+        initial={{ opacity: 0, scale: 0.97, filter: 'blur(6px)' }}
+        animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+        transition={{ duration: 1.2, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
         className="w-full flex justify-center mb-10"
       >
         <img
@@ -43,7 +43,7 @@ export const Slide15CompetenceMatrix = () => {
       >
         <p className="text-2xl md:text-3xl text-[var(--color-text-primary)] font-extralight leading-snug tracking-[-0.01em]">
           The question is not what looks modern,<br/>
-          <span className="text-gradient-accent font-light mt-3 inline-block">but what makes the learning visible.</span>
+          <span className="text-gradient-accent font-light mt-3 inline-block">but what best surfaces the target competence.</span>
         </p>
       </motion.div>
     </div>

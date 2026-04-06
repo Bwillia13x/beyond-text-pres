@@ -4,11 +4,11 @@ import { MessageCircle } from 'lucide-react';
 
 export const Slide20Debrief = () => {
   const themes = [
-    "Over-reliance on polished prose",
-    "Invisible process",
-    "Weak transfer evidence",
-    "Limited oral defensibility",
-    "Missing implementation layer",
+    { gap: "Invisible process", opportunity: "Add a process trace or defense layer" },
+    { gap: "Weak transfer evidence", opportunity: "Introduce cross-representation across modes" },
+    { gap: "Limited oral defensibility", opportunity: "Build in rehearsal, viva, or briefing logic" },
+    { gap: "No implementation layer", opportunity: "Require prototype, applied demonstration, or field interpretation" },
+    { gap: "Over-reliance on polished prose", opportunity: "Design for richer construct visibility" },
   ];
 
   return (
@@ -24,21 +24,24 @@ export const Slide20Debrief = () => {
           <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-secondary)] font-medium opacity-78">Discussion</span>
         </div>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
-          Common patterns that often emerge
+          From gaps to design opportunities
         </h2>
       </motion.div>
 
-      <div className="flex flex-col gap-3 w-full max-w-3xl mx-auto mb-14">
+      <div className="flex flex-col gap-3 w-full max-w-4xl mx-auto mb-14">
         {themes.map((theme, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 + idx * 0.1 }}
-            className="card-glass rounded-xl p-5 flex items-center gap-4 shadow-premium"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            whileHover={{ x: 4 }}
+            transition={{ type: 'spring', stiffness: 150, damping: 20, delay: 0.3 + idx * 0.12 }}
+            className="card-glass rounded-xl p-5 flex items-center gap-4 shadow-premium cursor-default"
           >
             <span className="w-2 h-2 rounded-full bg-[var(--color-accent)] opacity-40 shrink-0" />
-            <span className="text-lg text-[var(--color-text-secondary)] font-light leading-relaxed opacity-94">{theme}</span>
+            <span className="text-base text-[var(--color-text-secondary)] font-light leading-relaxed opacity-94">{theme.gap}</span>
+            <span className="text-[var(--color-text-secondary)] opacity-40 shrink-0">→</span>
+            <span className="text-base text-[var(--color-text-primary)] font-normal leading-relaxed">{theme.opportunity}</span>
           </motion.div>
         ))}
       </div>
@@ -50,7 +53,7 @@ export const Slide20Debrief = () => {
         className="text-center max-w-2xl mx-auto"
       >
         <p className="text-xl text-[var(--color-text-secondary)] font-light italic opacity-82">
-          What recurring gaps surfaced in your own assignments?
+          Every gap is a design opportunity. Where does your stack begin?
         </p>
       </motion.div>
     </div>

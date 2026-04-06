@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { AnimatedText } from './AnimatedText';
 import { TextShimmer } from './TextShimmer';
+import { AnimatedBorder } from './AnimatedBorder';
 import slideImage from '@/presentation_image_assets/pres9.webp';
 
 export const Slide21FinalTakeaway = () => {
@@ -60,9 +61,13 @@ export const Slide21FinalTakeaway = () => {
           transition={{ delay: 0.8, duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="mb-6 mt-4"
         >
-          <TextShimmer delay={1.5} duration={2.2}>
-            <span className="text-gradient-accent font-light text-5xl md:text-6xl lg:text-7xl inline-block leading-[1.15] tracking-[-0.03em]">The goal is better evidence of learning.</span>
-          </TextShimmer>
+          <AnimatedBorder borderRadius="0.75rem" duration={8} borderWidth={1}>
+            <div className="px-6 py-3 bg-[var(--color-surface)]" style={{ borderRadius: 'calc(0.75rem - 1px)' }}>
+              <TextShimmer delay={1.5} duration={2.2}>
+                <span className="text-gradient-accent font-light text-5xl md:text-6xl lg:text-7xl inline-block leading-[1.15] tracking-[-0.03em]">The goal is designed systems of evidence.</span>
+              </TextShimmer>
+            </div>
+          </AnimatedBorder>
         </motion.div>
       </motion.div>
 
@@ -81,15 +86,15 @@ export const Slide21FinalTakeaway = () => {
         className="max-w-4xl relative z-10 mb-4"
       >
         <p className="text-xl md:text-2xl text-[var(--color-text-secondary)] font-light leading-relaxed tracking-wide opacity-94">
-          In the AI era, multimodality is not decoration. <span className="text-[var(--color-text-primary)] font-normal">It is evidence design.</span>
+          The next frontier is not multimodal submission. <span className="text-[var(--color-text-primary)] font-normal">It is multimodal evidence design.</span>
         </p>
       </motion.div>
 
       {/* Closing visual — quiet metaphor in lower zone */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, delay: 1.3 }}
+        initial={{ opacity: 0, y: 30, scale: 0.97, filter: 'blur(6px)' }}
+        animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+        transition={{ duration: 1.4, delay: 1.3, ease: [0.25, 0.46, 0.45, 0.94] }}
         className="relative z-10"
       >
         <img

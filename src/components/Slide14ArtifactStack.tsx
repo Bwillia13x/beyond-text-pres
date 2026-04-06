@@ -6,10 +6,10 @@ import slideImage from '@/presentation_image_assets/pres2.webp';
 
 export const Slide14ArtifactStack = () => {
   const stackLayers = [
-    { icon: Frame, label: "Problem framing", description: "Problem definition, scope, and rationale", color: "var(--color-tertiary)" },
-    { icon: FileText, label: "Primary artifact", description: "Core analytical or creative output", color: "var(--color-text-primary)" },
-    { icon: Wrench, label: "Implementation or communication", description: "Code, prototype, infographic, briefing, visualization", color: "var(--color-secondary)" },
-    { icon: MessageSquare, label: "Defense / reflection", description: "Oral defense, annotation, what transferred, what would change", color: "var(--color-accent)" },
+    { icon: Frame, label: "Problem framing", description: "Problem definition, scope, rationale, and decision trace", color: "var(--color-tertiary)" },
+    { icon: FileText, label: "Primary artifact", description: "Core analytical, creative, or implementation output", color: "var(--color-text-primary)" },
+    { icon: Wrench, label: "Translation layer", description: "Same idea carried into a different form: briefing, prototype, diagram, code", color: "var(--color-secondary)" },
+    { icon: MessageSquare, label: "Defense / process trace", description: "Oral defense, reflection, rationale for choices, what transferred and what would change", color: "var(--color-accent)" },
   ];
 
   return (
@@ -71,9 +71,9 @@ export const Slide14ArtifactStack = () => {
 
         {/* Right column: image */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          initial={{ opacity: 0, x: 30, scale: 0.97, filter: 'blur(6px)' }}
+          animate={{ opacity: 1, x: 0, scale: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="flex-1 flex items-center justify-center"
         >
           <img
@@ -94,9 +94,9 @@ export const Slide14ArtifactStack = () => {
         className="text-center max-w-3xl mx-auto"
       >
         <p className="text-xl md:text-2xl text-[var(--color-text-primary)] font-light leading-snug tracking-[-0.01em] opacity-95">
-          <span className="text-gradient-accent font-light">Not every task needs every layer.</span>
+          <span className="text-gradient-accent font-light">The stack is selective, not maximal.</span>
           <br/>
-          <span className="text-[var(--color-text-secondary)] text-lg font-light mt-2 inline-block">Design a selective stack that reveals different aspects of competence.</span>
+          <span className="text-[var(--color-text-secondary)] text-lg font-light mt-2 inline-block">Each layer makes a different dimension of competence visible.</span>
         </p>
       </motion.div>
     </div>

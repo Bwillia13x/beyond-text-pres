@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Search, Wrench, MessageSquare } from 'lucide-react';
+import { Search, Wrench, MessageSquare, ArrowRightLeft } from 'lucide-react';
 
 export const Slide13AssignmentArchitecture = () => {
   const categories = [
@@ -18,6 +18,11 @@ export const Slide13AssignmentArchitecture = () => {
       icon: MessageSquare,
       label: "Communication / defense",
       description: "Explaining, presenting, defending under questioning",
+    },
+    {
+      icon: ArrowRightLeft,
+      label: "Cross-representation",
+      description: "Carrying the same idea across text, diagram, oral explanation, and implementation",
     },
   ];
 
@@ -43,23 +48,23 @@ export const Slide13AssignmentArchitecture = () => {
         transition={{ duration: 0.7, delay: 0.15 }}
         className="text-center text-xl md:text-2xl text-[var(--color-text-secondary)] font-light tracking-[-0.01em] mb-14 opacity-95 max-w-3xl mx-auto leading-relaxed"
       >
-        Different modes reveal different dimensions of learning.<br/>
-        <span className="text-[var(--color-text-primary)] font-normal">Use only the modes that best surface the target competence.</span>
+        Cross-representation is a new transfer test.<br/>
+        <span className="text-[var(--color-text-primary)] font-normal">Does understanding survive translation across forms?</span>
       </motion.p>
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.25 }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full max-w-5xl mx-auto mb-14"
+        className="grid grid-cols-1 md:grid-cols-4 gap-5 lg:gap-6 w-full max-w-5xl mx-auto mb-14"
       >
         {categories.map((cat, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 + idx * 0.12 }}
-            className="card-glass rounded-2xl p-8 flex flex-col items-center text-center shadow-premium"
+            transition={{ type: 'spring', stiffness: 150, damping: 20, delay: 0.35 + idx * 0.12 }}
+            className="card-glass rounded-2xl p-6 flex flex-col items-center text-center shadow-premium"
           >
             <div className="w-12 h-12 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] flex items-center justify-center mb-5">
               <cat.icon className="w-6 h-6 text-[var(--color-accent)] opacity-85" />
@@ -77,8 +82,8 @@ export const Slide13AssignmentArchitecture = () => {
         className="text-center max-w-3xl mx-auto"
       >
         <p className="text-2xl md:text-3xl text-[var(--color-text-primary)] font-light leading-snug tracking-[-0.01em] opacity-95">
-          The goal is not more media.<br/>
-          <span className="text-gradient-accent font-light mt-3 inline-block">The goal is purposeful evidence diversity.</span>
+          When understanding must survive in a new form,<br/>
+          <span className="text-gradient-accent font-light mt-3 inline-block">the assessment reaches deeper than any single artifact can.</span>
         </p>
       </motion.div>
     </div>
