@@ -1,53 +1,14 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Filter, BrainCircuit } from 'lucide-react';
-
-// SVG-based animated flowing dot for precise control
-const FlowChannel: React.FC<{ dotCount?: number; color?: string; delayBase?: number }> = ({ dotCount = 3, color = 'var(--color-accent)', delayBase = 0 }) => {
-  const dots = useMemo(() =>
-    Array.from({ length: dotCount }, (_, i) => ({
-      id: i,
-      delay: delayBase + i * 1.4 + Math.random() * 0.5,
-      duration: 1.6 + Math.random() * 0.6,
-      yOff: (Math.random() - 0.5) * 4,
-    })),
-  [dotCount, delayBase]);
-
-  return (
-    <svg viewBox="0 0 40 12" className="w-full h-3 my-auto">
-      {/* Track line */}
-      <line x1="0" y1="6" x2="40" y2="6" stroke="var(--color-border)" strokeWidth="0.4" opacity="0.5" />
-      {/* Animated dots */}
-      {dots.map(d => (
-        <motion.circle
-          key={d.id}
-          cy={6 + d.yOff}
-          r="1.8"
-          fill={color}
-          filter="url(#s7dotGlow)"
-          initial={{ cx: 0, opacity: 0 }}
-          animate={{ cx: 40, opacity: [0, 0.9, 0.9, 0] }}
-          transition={{ duration: d.duration, delay: d.delay, repeat: Infinity, ease: 'linear', repeatDelay: d.duration * 0.4 }}
-        />
-      ))}
-      <defs>
-        <filter id="s7dotGlow" x="-100%" y="-100%" width="300%" height="300%">
-          <feGaussianBlur stdDeviation="1.5" result="blur" />
-          <feMerge>
-            <feMergeNode in="blur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-    </svg>
-  );
-};
+import { Bot, Clock, EyeOff, RefreshCw, GitBranch } from 'lucide-react';
 
 export const Slide7WorkflowCompression = () => {
-  const courses = [
-    { name: "Course 1", color: 'var(--color-accent)', phases: ["Ingest & Map", "Draft & Revise", "Polish & Submit"] },
-    { name: "Course 2", color: 'var(--color-secondary)', phases: ["Synthesis", "Slide Generation", "Deadline Tracking"] },
-    { name: "Course 3", color: 'var(--color-tertiary)', phases: ["Reading Summaries", "Spreadsheet Logic", "Drafting"] },
+  const projects = [
+    { name: "ECON Project", color: 'var(--color-accent)', agents: ["Draft essay", "Build slides", "Problem sets"] },
+    { name: "HIST Project", color: 'var(--color-secondary)', agents: ["Research paper", "Source analysis", "Annotated bib"] },
+    { name: "CS Project", color: 'var(--color-tertiary)', agents: ["Code labs", "Documentation", "Test suites"] },
+    { name: "PHIL Project", color: 'var(--color-accent)', agents: ["Position paper", "Case studies", "Discussion prep"] },
+    { name: "RSMT Project", color: 'var(--color-secondary)', agents: ["Survey design", "Data analysis", "Lit review"] },
   ];
 
   return (
@@ -56,109 +17,93 @@ export const Slide7WorkflowCompression = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center w-full mb-10"
+        className="text-center w-full mb-6"
       >
-        <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
+        <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-4 block opacity-80">
           The Scenario in Action
         </span>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
-          Day-one workflow compression
+          Parallel projects <span className="text-[var(--color-accent)]">×</span> parallel agents
         </h2>
-        <p className="mt-4 text-xl text-[var(--color-text-secondary)] font-light">
-          Semester-long parallel tracks, each initialized from course materials on day one.
+        <p className="mt-3 text-lg text-[var(--color-text-secondary)] font-light max-w-3xl mx-auto">
+          Each project spawns its own agents and subagents. All five run simultaneously.
         </p>
       </motion.div>
 
-      <div className="flex flex-col md:flex-row items-stretch justify-center gap-4 w-full max-w-6xl mx-auto">
-        
-        {/* Uploads Column */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="md:w-[180px] shrink-0 card-glass rounded-2xl p-5 flex flex-col shadow-premium relative"
-        >
-          <div className="flex items-center gap-2 text-[var(--color-text-secondary)] uppercase tracking-[0.15em] text-xs font-medium mb-5">
-            <Filter className="w-4 h-4" /> Uploads
-          </div>
-          <div className="flex flex-wrap gap-2 text-sm font-light text-[var(--color-text-secondary)]">
-            {["Syllabus", "Rubric", "LMS", "Readings", "Slides", "Exemplars"].map((item, idx) => (
-              <motion.span 
-                key={idx}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 + idx * 0.08 }}
-                className="bg-[var(--color-surface)] px-2.5 py-1.5 rounded border border-[var(--color-border)]"
-              >
-                {item}
-              </motion.span>
-            ))}
-          </div>
-          {/* Animated pulse to indicate "feeding" */}
+      {/* Project lanes with nested parallel agents */}
+      <div className="flex flex-col gap-2 w-full max-w-5xl mx-auto">
+        {projects.map((project, idx) => (
           <motion.div
-            className="absolute -right-1 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[var(--color-accent)]"
-            animate={{ scale: [1, 1.8, 1], opacity: [0.8, 0.2, 0.8] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </motion.div>
-
-        {/* Flow connector column */}
-        <div className="hidden md:flex flex-col justify-around py-4 w-10 shrink-0">
-          {courses.map((course, idx) => (
-            <FlowChannel key={idx} dotCount={2} color={course.color} delayBase={idx * 0.5} />
-          ))}
-        </div>
-
-        {/* The Machine / Projects */}
-        <div className="flex-1 flex flex-col gap-3">
-          {courses.map((course, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 + idx * 0.15 }}
-              className="card-glass-accent rounded-2xl p-4 flex flex-col sm:flex-row items-center gap-4 relative overflow-hidden"
-            >
-              {/* Course Identity */}
-              <div className="flex items-center gap-3 shrink-0 sm:w-[140px]">
-                <div className="w-9 h-9 bg-[var(--color-surface)] rounded-full flex items-center justify-center border" style={{ borderColor: course.color + '40' }}>
-                  <BrainCircuit className="w-4 h-4" style={{ color: course.color }} />
-                </div>
-                <span className="font-semibold text-base text-[var(--color-text-primary)]">{course.name}</span>
+            key={idx}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 + idx * 0.1 }}
+            className="card-glass-accent rounded-xl p-3 flex items-center gap-3 relative overflow-hidden"
+          >
+            {/* Project identity */}
+            <div className="flex items-center gap-2 shrink-0 w-[140px]">
+              <div className="w-7 h-7 bg-[var(--color-surface)] rounded-full flex items-center justify-center border" style={{ borderColor: project.color + '40' }}>
+                <GitBranch className="w-3.5 h-3.5" style={{ color: project.color }} />
               </div>
+              <span className="text-sm font-semibold text-[var(--color-text-primary)]">{project.name}</span>
+            </div>
 
-              {/* Phase chips */}
-              <div className="flex-1 w-full pl-5 sm:pl-6 border-l relative" style={{ borderColor: course.color + '40' }}>
-                <ArrowRight className="absolute left-[-10px] top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: course.color }} />
-                <div className="flex flex-wrap gap-3">
-                  {course.phases.map((phase, aIdx) => (
-                    <motion.div
-                      key={aIdx}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4, delay: 0.8 + (idx * 0.2) + (aIdx * 0.1) }}
-                      className="flex items-center gap-2 bg-[var(--color-surface)] border border-[var(--color-border)] px-4 py-2 rounded-lg shadow-sm"
-                    >
-                      <span className="text-sm font-light text-[var(--color-text-primary)]">{phase}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
+            {/* Parallel agent tasks */}
+            <div className="flex-1 flex flex-wrap items-center gap-2 pl-3 border-l" style={{ borderColor: project.color + '30' }}>
+              {project.agents.map((agent, aIdx) => (
+                <motion.div
+                  key={aIdx}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.5 + (idx * 0.12) + (aIdx * 0.06) }}
+                  className="flex items-center gap-1.5 bg-[var(--color-surface)] border border-[var(--color-border)] px-2.5 py-1.5 rounded-lg"
+                >
+                  <Bot className="w-3 h-3" style={{ color: project.color }} />
+                  <span className="text-xs font-light text-[var(--color-text-primary)]">{agent}</span>
+                </motion.div>
+              ))}
+            </div>
 
-              {/* Continuous activity pulse overlay */}
-              <motion.div
-                className="absolute inset-0 pointer-events-none rounded-2xl"
-                style={{ 
-                  background: `radial-gradient(ellipse at 90% 50%, ${course.color}08 0%, transparent 60%)`,
-                }}
-                animate={{ opacity: [0.3, 0.8, 0.3] }}
-                transition={{ duration: 3 + idx, repeat: Infinity, ease: "easeInOut" }}
-              />
-            </motion.div>
-          ))}
-        </div>
-
+            {/* Continuous activity pulse */}
+            <motion.div
+              className="absolute inset-0 pointer-events-none rounded-xl"
+              style={{ background: `radial-gradient(ellipse at 90% 50%, ${project.color}08 0%, transparent 60%)` }}
+              animate={{ opacity: [0.3, 0.8, 0.3] }}
+              transition={{ duration: 3 + idx, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </motion.div>
+        ))}
       </div>
+
+      {/* Bottom: three key implications */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.2 }}
+        className="mt-6 flex flex-col md:flex-row items-stretch justify-center gap-3 max-w-4xl mx-auto w-full"
+      >
+        <div className="flex-1 card-glass rounded-xl p-3.5 flex items-center gap-3">
+          <Clock className="w-5 h-5 text-[var(--color-accent)] shrink-0" />
+          <div>
+            <span className="text-sm font-semibold text-[var(--color-text-primary)] block">1–2 hours</span>
+            <span className="text-xs text-[var(--color-text-secondary)] font-light">Full semester of coursework</span>
+          </div>
+        </div>
+        <div className="flex-1 card-glass rounded-xl p-3.5 flex items-center gap-3">
+          <EyeOff className="w-5 h-5 text-[var(--color-secondary)] shrink-0" />
+          <div>
+            <span className="text-sm font-semibold text-[var(--color-text-primary)] block">Zero understanding</span>
+            <span className="text-xs text-[var(--color-text-secondary)] font-light">No student learning required</span>
+          </div>
+        </div>
+        <div className="flex-1 card-glass rounded-xl p-3.5 flex items-center gap-3">
+          <RefreshCw className="w-5 h-5 text-[var(--color-tertiary)] shrink-0" />
+          <div>
+            <span className="text-sm font-semibold text-[var(--color-text-primary)] block">Automated polish</span>
+            <span className="text-xs text-[var(--color-text-secondary)] font-light">Scheduled tasks iterate until adequate</span>
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 };

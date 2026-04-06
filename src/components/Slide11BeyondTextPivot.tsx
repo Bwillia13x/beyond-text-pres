@@ -36,7 +36,7 @@ export const Slide11BeyondTextPivot = () => {
         <AnimatedText
           text="Beyond text:"
           as="h2"
-          className="text-5xl md:text-6xl lg:text-7xl font-extralight text-[var(--color-text-primary)] leading-[1.1] tracking-[-0.03em]"
+          className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] leading-[1.1] tracking-[-0.03em]"
           delay={0.2}
           staggerDelay={0.06}
         />
@@ -44,10 +44,10 @@ export const Slide11BeyondTextPivot = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="mb-8"
+          className="mb-6"
         >
           <TextShimmer delay={1} duration={2}>
-            <span className="text-gradient-accent font-light text-5xl md:text-6xl lg:text-7xl mt-4 inline-block leading-[1.1] tracking-[-0.03em]">from single artifact to evidence architecture</span>
+            <span className="text-gradient-accent font-light text-2xl md:text-3xl lg:text-4xl mt-2 inline-block leading-[1.2] tracking-[-0.01em]">from single artifact to evidence architecture</span>
           </TextShimmer>
         </motion.div>
       </motion.div>
@@ -56,7 +56,7 @@ export const Slide11BeyondTextPivot = () => {
         initial={{ opacity: 0, y: 20, scale: 0.97, filter: 'blur(6px)' }}
         animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
         transition={{ duration: 1.2, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="w-full flex justify-center mb-8 relative z-10"
+        className="w-full max-w-[640px] mx-auto mb-6 relative z-10"
       >
         <img
           src={slideImage}
@@ -64,7 +64,7 @@ export const Slide11BeyondTextPivot = () => {
           width={1671}
           height={940}
           decoding="async"
-          className="w-full h-auto object-contain"
+          className="w-full h-auto object-contain rounded-lg"
         />
       </motion.div>
 
@@ -74,7 +74,7 @@ export const Slide11BeyondTextPivot = () => {
         transition={{ duration: 0.8, delay: 1.2 }}
         className="max-w-3xl relative z-10"
       >
-        <p className="text-2xl md:text-3xl text-[var(--color-text-primary)] font-light leading-snug tracking-[-0.01em] opacity-95">
+        <p className="text-xl md:text-2xl text-[var(--color-text-primary)] font-light leading-snug tracking-[-0.01em] opacity-95">
           When one artifact is no longer enough,<br/>
           <span className="text-gradient-accent font-light mt-3 inline-block">the task becomes a designed evidence system.</span>
         </p>

@@ -76,7 +76,7 @@ export const Slide10VerificationParadox = () => {
         <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
           The Core Tension
         </span>
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           The verification paradox
         </h2>
         <p className="mt-4 text-xl text-[var(--color-text-secondary)] font-light">

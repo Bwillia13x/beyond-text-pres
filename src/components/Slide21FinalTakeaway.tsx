@@ -51,7 +51,7 @@ export const Slide21FinalTakeaway = () => {
         <AnimatedText
           text="The goal is not more media."
           as="h2"
-          className="text-5xl md:text-6xl lg:text-7xl font-extralight text-[var(--color-text-primary)] leading-[1.15] tracking-[-0.03em]"
+          className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] leading-[1.15] tracking-[-0.03em]"
           delay={0.2}
           staggerDelay={0.06}
         />
@@ -64,7 +64,7 @@ export const Slide21FinalTakeaway = () => {
           <AnimatedBorder borderRadius="0.75rem" duration={8} borderWidth={1}>
             <div className="px-6 py-3 bg-[var(--color-surface)]" style={{ borderRadius: 'calc(0.75rem - 1px)' }}>
               <TextShimmer delay={1.5} duration={2.2}>
-                <span className="text-gradient-accent font-light text-5xl md:text-6xl lg:text-7xl inline-block leading-[1.15] tracking-[-0.03em]">The goal is designed systems of evidence.</span>
+                <span className="text-gradient-accent font-light text-4xl md:text-5xl lg:text-6xl inline-block leading-[1.15] tracking-[-0.03em]">The goal is designed systems of evidence.</span>
               </TextShimmer>
             </div>
           </AnimatedBorder>
@@ -103,7 +103,7 @@ export const Slide21FinalTakeaway = () => {
           width={1536}
           height={1024}
           decoding="async"
-          className="max-w-[860px] w-full h-auto object-contain opacity-[0.84]"
+          className="max-w-[680px] w-full h-auto object-contain opacity-[0.84]"
         />
       </motion.div>
     </div>

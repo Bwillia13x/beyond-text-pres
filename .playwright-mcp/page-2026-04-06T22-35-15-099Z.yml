@@ -1,0 +1,44 @@
+- generic [ref=e3]:
+  - main [ref=e5]:
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - generic "Beyond Text" [ref=e9]:
+          - generic [ref=e10]: Beyond
+          - generic [ref=e11]: Text
+        - paragraph [ref=e15]:
+          - text: Human-Guided Multimodal Assessment
+          - text: for AI-Mediated Learning
+      - paragraph [ref=e18]: When one artifact is no longer enough
+  - generic:
+    - generic [ref=e19]:
+      - button "Previous slide" [disabled] [ref=e20]:
+        - img [ref=e21]
+      - generic [ref=e23]:
+        - button "Go to slide 1" [ref=e24]
+        - button "Go to slide 2" [ref=e26]
+        - button "Go to slide 3" [ref=e27]
+        - button "Go to slide 4" [ref=e28]
+        - button "Go to slide 5" [ref=e29]
+        - button "Go to slide 6" [ref=e30]
+        - button "Go to slide 7" [ref=e31]
+        - button "Go to slide 8" [ref=e32]
+        - button "Go to slide 9" [ref=e33]
+        - button "Go to slide 10" [ref=e34]
+        - button "Go to slide 11" [ref=e35]
+        - button "Go to slide 12" [ref=e36]
+        - button "Go to slide 13" [ref=e37]
+        - button "Go to slide 14" [ref=e38]
+        - button "Go to slide 15" [ref=e39]
+        - button "Go to slide 16" [ref=e40]
+        - button "Go to slide 17" [ref=e41]
+        - button "Go to slide 18" [ref=e42]
+        - button "Go to slide 19" [ref=e43]
+        - button "Go to slide 20" [ref=e44]
+        - button "Go to slide 21" [ref=e45]
+      - button "Next slide" [ref=e46]:
+        - img [ref=e47]
+    - generic [ref=e50]:
+      - generic [ref=e52]: "0"
+      - generic [ref=e54]: "1"
+      - generic [ref=e55]: /
+      - generic [ref=e56]: "21"
