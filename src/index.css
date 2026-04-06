@@ -168,6 +168,20 @@
     height: 1px;
     background: linear-gradient(90deg, transparent 0%, var(--color-border) 20%, var(--color-border) 80%, transparent 100%);
   }
+
+  .presentation-safe {
+    padding-top: clamp(2.75rem, 5vh, 3.75rem);
+    padding-bottom: clamp(4.5rem, 8vh, 6rem);
+  }
+
+  .presentation-helper {
+    color: var(--color-text-secondary);
+  }
+
+  .presentation-caption {
+    color: var(--color-text-secondary);
+    opacity: 0.78;
+  }
   
   .accent-line-top {
     position: relative;

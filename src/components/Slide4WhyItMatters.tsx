@@ -16,15 +16,15 @@ export const Slide4WhyItMatters = () => {
 
   const artifacts = [
     { icon: FileText, label: "Essays & Memos" },
-    { icon: PenTool, label: "Lit Syntheses" },
-    { icon: LayoutDashboard, label: "Spreadsheets" },
+    { icon: PenTool, label: "Literature Syntheses" },
+    { icon: LayoutDashboard, label: "Spreadsheets & Models" },
     { icon: Presentation, label: "Presentations" },
-    { icon: Laptop, label: "Coding Tasks" },
+    { icon: Laptop, label: "Coding Tasks & Prototypes" },
     { icon: Database, label: "Data Analysis" },
   ];
 
   return (
-    <div className="flex flex-col justify-center max-w-6xl mx-auto h-full px-8 relative z-10 w-full">
+    <div className="presentation-safe flex flex-col justify-center max-w-6xl mx-auto h-full px-8 relative z-10 w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -54,8 +54,8 @@ export const Slide4WhyItMatters = () => {
           <h3 className="text-xl font-medium text-[var(--color-text-primary)] mb-3">
             The Capability Frontier
           </h3>
-          <p className="text-sm text-[var(--color-text-secondary)] font-light leading-relaxed">
-            Agents, tool-use, multi-modal reasoning, and persistent context environments.
+          <p className="text-base text-[var(--color-text-secondary)] font-light leading-relaxed">
+            Agents, tool-use, multimodal reasoning, and persistent context environments.
           </p>
 
           {/* Pulsing emission indicator */}
@@ -109,8 +109,8 @@ export const Slide4WhyItMatters = () => {
           className="flex-1 w-full relative z-10"
         >
           <div className="card-glass-accent p-6 rounded-2xl glow-accent">
-            <h3 className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-accent)] font-semibold mb-5 text-center">
-              Computer-Mediated Artifact Production
+            <h3 className="text-xs uppercase tracking-[0.15em] text-[var(--color-accent)] font-semibold mb-5 text-center">
+              Artifact Production Now Easily AI-Mediated
             </h3>
             <div className="grid grid-cols-2 gap-3">
               {artifacts.map((item, idx) => (
@@ -119,10 +119,10 @@ export const Slide4WhyItMatters = () => {
                   initial={{ opacity: 0, x: 10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 1.2 + idx * 0.12 }}
-                  className="flex items-center gap-2.5 bg-[var(--color-surface)] p-2.5 rounded-lg border border-[var(--color-border)] relative overflow-hidden"
+                  className="flex items-center gap-2.5 bg-[var(--color-surface)] p-3 rounded-lg border border-[var(--color-border)] relative overflow-hidden"
                 >
-                  <item.icon className="w-3.5 h-3.5 text-[var(--color-text-tertiary)]" />
-                  <span className="text-xs font-light text-[var(--color-text-secondary)]">{item.label}</span>
+                  <item.icon className="w-4 h-4 text-[var(--color-text-secondary)] opacity-80" />
+                  <span className="text-sm font-light text-[var(--color-text-secondary)]">{item.label}</span>
                   {/* Incoming particle flash per artifact */}
                   <motion.div
                     className="absolute left-0 top-0 bottom-0 w-0.5 bg-[var(--color-accent)]"
@@ -143,7 +143,7 @@ export const Slide4WhyItMatters = () => {
         transition={{ duration: 0.8, delay: 1 }}
         className="mt-14 text-center"
       >
-        <p className="text-2xl md:text-3xl text-[var(--color-text-primary)] font-extralight leading-relaxed max-w-3xl mx-auto tracking-[-0.01em]">
+        <p className="text-3xl md:text-4xl text-[var(--color-text-primary)] font-extralight leading-snug max-w-3xl mx-auto tracking-[-0.02em]">
           The real challenge is not just AI-generated text.<br/>
           <span className="text-gradient-accent font-light mt-2 inline-block">It is AI-mediated workflow.</span>
         </p>

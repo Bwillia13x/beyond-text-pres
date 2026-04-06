@@ -1,22 +1,15 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import slideImage from '@/presentation_image_assets/pres3.webp';
 
 export const Slide15CompetenceMatrix = () => {
-  const rows = [
-    { goal: "Analysis", output: "Memo / explanation", reveals: "Reasoning quality" },
-    { goal: "Implementation", output: "Prototype / code / model", reveals: "Execution capability" },
-    { goal: "Communication", output: "Infographic / video / slide", reveals: "Audience translation" },
-    { goal: "Analytical structure", output: "Diagram / data visualization", reveals: "Structural reasoning" },
-    { goal: "Judgment", output: "Oral defense / critique", reveals: "Defensibility under questioning" },
-  ];
-
   return (
-    <div className="flex flex-col justify-center max-w-6xl mx-auto h-full px-8 relative z-10 w-full">
+    <div className="presentation-safe flex flex-col justify-center max-w-[1420px] mx-auto h-full px-8 relative z-10 w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center w-full mb-12"
+        className="text-center w-full mb-10"
       >
         <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
           Purposeful Selection
@@ -24,55 +17,25 @@ export const Slide15CompetenceMatrix = () => {
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           Choose outputs by competence, not novelty
         </h2>
-        <span className="text-[11px] uppercase tracking-[0.18em] text-[var(--color-text-tertiary)] font-light mt-4 block opacity-60">
-          Illustrative pairings
-        </span>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="w-full max-w-5xl mx-auto mb-12"
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="w-full flex justify-center mb-10"
       >
-        <div className="card-glass rounded-2xl overflow-hidden shadow-deep">
-          {/* Header */}
-          <div className="grid grid-cols-3 gap-px bg-[var(--color-border)]">
-            <div className="bg-[var(--color-surface-overlay)] p-4">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-accent)] font-semibold">Learning Goal</span>
-            </div>
-            <div className="bg-[var(--color-surface-overlay)] p-4">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-accent)] font-semibold">Example Evidence Form</span>
-            </div>
-            <div className="bg-[var(--color-surface-overlay)] p-4">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-accent)] font-semibold">What It Reveals</span>
-            </div>
-          </div>
-          
-          {/* Rows */}
-          {rows.map((row, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 + idx * 0.1 }}
-              className="grid grid-cols-3 gap-px bg-[var(--color-border)]"
-            >
-              <div className="bg-[var(--color-surface-elevated)] p-5">
-                <span className="text-sm font-medium text-[var(--color-text-primary)]">{row.goal}</span>
-              </div>
-              <div className="bg-[var(--color-surface-elevated)] p-5">
-                <span className="text-sm font-light text-[var(--color-text-secondary)]">{row.output}</span>
-              </div>
-              <div className="bg-[var(--color-surface-elevated)] p-5">
-                <span className="text-sm font-light text-[var(--color-text-tertiary)]">{row.reveals}</span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <img
+          src={slideImage}
+          alt="Competence to output pairing matrix"
+          width={1536}
+          height={1024}
+          decoding="async"
+          className="w-full h-auto max-h-[52vh] object-contain"
+        />
       </motion.div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1 }}

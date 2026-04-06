@@ -1,26 +1,24 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Frame, FileText, Wrench, Presentation, MessageSquare, RotateCcw } from 'lucide-react';
+import { Frame, FileText, Wrench, MessageSquare } from 'lucide-react';
 import { AnimatedText } from './AnimatedText';
-import { TiltCard } from './TiltCard';
+import slideImage from '@/presentation_image_assets/pres2.webp';
 
 export const Slide14ArtifactStack = () => {
   const stackLayers = [
-    { icon: Frame, labelStrong: "Problem framing", labelLight: "artifact", description: "Problem definition, scope, rationale", color: "var(--color-tertiary)" },
-    { icon: FileText, labelStrong: "Primary", labelLight: "artifact", description: "Core analytical or creative output", color: "var(--color-text-primary)" },
-    { icon: Wrench, labelStrong: "Build / implementation", labelLight: "artifact", description: "Code, prototype, model, operationalization", color: "var(--color-secondary)" },
-    { icon: Presentation, labelStrong: "Communication", labelLight: "artifact", description: "Infographic, slide, video, briefing", color: "var(--color-accent)" },
-    { icon: MessageSquare, labelStrong: "Explanation / defense", labelLight: "artifact", description: "Oral defense, Q&A, annotation", color: "var(--color-text-primary)" },
-    { icon: RotateCcw, labelStrong: "Reflection / transfer", labelLight: "artifact", description: "What transferred, what would change", color: "var(--color-tertiary)" },
+    { icon: Frame, label: "Problem framing", description: "Problem definition, scope, and rationale", color: "var(--color-tertiary)" },
+    { icon: FileText, label: "Primary artifact", description: "Core analytical or creative output", color: "var(--color-text-primary)" },
+    { icon: Wrench, label: "Implementation or communication", description: "Code, prototype, infographic, briefing, visualization", color: "var(--color-secondary)" },
+    { icon: MessageSquare, label: "Defense / reflection", description: "Oral defense, annotation, what transferred, what would change", color: "var(--color-accent)" },
   ];
 
   return (
-    <div className="flex flex-col justify-center max-w-6xl mx-auto h-full px-8 relative z-10 w-full">
+    <div className="presentation-safe flex flex-col justify-center max-w-7xl mx-auto h-full px-8 relative z-10 w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center w-full mb-12"
+        className="text-center w-full mb-8"
       >
         <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
           Evidence Architecture
@@ -28,7 +26,7 @@ export const Slide14ArtifactStack = () => {
         <AnimatedText
           text="The multimodal artifact stack"
           as="h2"
-          className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]"
+          className="text-4xl md:text-5xl lg:text-[3.75rem] font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]"
           delay={0.1}
           staggerDelay={0.05}
         />
@@ -36,63 +34,69 @@ export const Slide14ArtifactStack = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-4 text-base md:text-lg text-[var(--color-text-tertiary)] font-light tracking-wide"
+          className="mt-4 text-base md:text-lg text-[var(--color-text-secondary)] font-light tracking-wide opacity-85"
         >
-          An illustrative stack — select the layers that best reveal the target competence.
+          Select the layers that best reveal the target competence.
         </motion.p>
       </motion.div>
 
-      <div className="flex flex-col gap-3 w-full max-w-4xl mx-auto mb-12">
-        {stackLayers.map((layer, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, x: -30, y: 10 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ 
-              type: 'spring',
-              stiffness: 120,
-              damping: 14,
-              mass: 0.8,
-              delay: 0.2 + idx * 0.1,
-            }}
-          >
-            <TiltCard 
-              className="flex items-center gap-6 card-glass rounded-xl p-5 hover:border-[var(--color-accent-muted)] transition-all duration-500 relative overflow-hidden shadow-premium hover:shadow-deep"
-              tiltStrength={4}
+      <div className="flex flex-col md:flex-row gap-8 lg:gap-10 w-full mb-8">
+        {/* Left column: layer list */}
+        <div className="flex flex-col gap-3 flex-1 md:max-w-[55%]">
+          {stackLayers.map((layer, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, x: -30, y: 10 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{
+                type: 'spring',
+                stiffness: 120,
+                damping: 14,
+                mass: 0.8,
+                delay: 0.2 + idx * 0.12,
+              }}
+              className="flex items-center gap-4 card-glass rounded-xl p-4 relative overflow-hidden shadow-premium"
             >
               <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-xl" style={{ backgroundColor: layer.color, opacity: 0.6 }} />
               <div className="w-10 h-10 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] flex items-center justify-center shrink-0 ml-2">
                 <layer.icon className="w-5 h-5" style={{ color: layer.color }} />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-base text-[var(--color-text-primary)]"><span className="font-medium">{layer.labelStrong}</span>{" "}<span className="font-light text-[var(--color-text-secondary)]">{layer.labelLight}</span></h3>
-                <p className="text-sm text-[var(--color-text-tertiary)] font-light">{layer.description}</p>
+                <h3 className="text-lg text-[var(--color-text-primary)] font-medium leading-snug">{layer.label}</h3>
+                <p className="text-sm text-[var(--color-text-secondary)] font-light opacity-85 leading-relaxed">{layer.description}</p>
               </div>
-              <span className="text-xs font-mono text-[var(--color-text-tertiary)] uppercase tracking-wider shrink-0 hidden md:block">
-                Layer {idx + 1}
-              </span>
-            </TiltCard>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Right column: image */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="flex-1 flex items-center justify-center"
+        >
+          <img
+            src={slideImage}
+            alt="Multimodal artifact stack diagram"
+            width={1536}
+            height={1024}
+            decoding="async"
+            className="w-full h-auto object-contain"
+          />
+        </motion.div>
       </div>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.55 }}
-        transition={{ duration: 0.8, delay: 0.9 }}
-        className="text-center text-xs tracking-[0.15em] uppercase text-[var(--color-text-tertiary)] font-medium mb-6 max-w-3xl mx-auto"
-      >
-        Not every task needs every layer.
-      </motion.p>
-
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1 }}
+        transition={{ duration: 0.8, delay: 0.9 }}
         className="text-center max-w-3xl mx-auto"
       >
-        <p className="text-lg text-[var(--color-text-secondary)] font-light leading-relaxed">
-          Instead of one final essay or report, design a <span className="text-[var(--color-text-primary)] font-medium">selective stack of artifacts</span> — each chosen to reveal a different aspect of competence.
+        <p className="text-xl md:text-2xl text-[var(--color-text-primary)] font-light leading-snug tracking-[-0.01em] opacity-95">
+          <span className="text-gradient-accent font-light">Not every task needs every layer.</span>
+          <br/>
+          <span className="text-[var(--color-text-secondary)] text-lg font-light mt-2 inline-block">Design a selective stack that reveals different aspects of competence.</span>
         </p>
       </motion.div>
     </div>

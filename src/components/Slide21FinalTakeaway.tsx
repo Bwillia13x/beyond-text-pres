@@ -2,32 +2,33 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { AnimatedText } from './AnimatedText';
 import { TextShimmer } from './TextShimmer';
+import slideImage from '@/presentation_image_assets/pres9.webp';
 
 export const Slide21FinalTakeaway = () => {
   return (
-    <div className="flex flex-col items-center justify-center max-w-5xl mx-auto h-full px-8 relative z-10 text-center">
-      <motion.div 
+    <div className="presentation-safe flex flex-col items-center justify-center max-w-5xl mx-auto h-full px-8 relative z-10 text-center">
+      <motion.div
         initial={{ opacity: 0, scale: 0.7 }}
-        animate={{ 
-          opacity: [0.12, 0.28, 0.12], 
+        animate={{
+          opacity: [0.12, 0.28, 0.12],
           scale: [0.85, 1.15, 0.85],
         }}
-        transition={{ 
-          duration: 18, 
+        transition={{
+          duration: 18,
           ease: "easeInOut",
           repeat: Infinity
         }}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[200px] pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(245,160,138,0.22) 0%, rgba(245,160,138,0.04) 50%, transparent 100%)' }}
       />
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
-        animate={{ 
-          opacity: [0.04, 0.10, 0.04], 
+        animate={{
+          opacity: [0.04, 0.10, 0.04],
           scale: [1, 1.08, 1],
         }}
-        transition={{ 
-          duration: 22, 
+        transition={{
+          duration: 22,
           ease: "easeInOut",
           repeat: Infinity,
           delay: 4
@@ -36,16 +37,16 @@ export const Slide21FinalTakeaway = () => {
         style={{ background: 'radial-gradient(circle, rgba(110,231,183,0.12) 0%, transparent 70%)' }}
       />
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: [0.25, 0.46, 0.45, 0.94] }}
         className="w-full relative z-10"
       >
-        <span className="text-[var(--color-text-tertiary)] uppercase tracking-[0.35em] text-[11px] font-medium mb-12 block opacity-60">
+        <span className="text-[var(--color-text-secondary)] uppercase tracking-[0.35em] text-[11px] font-medium mb-8 block opacity-64">
           Final Takeaway
         </span>
-        
+
         <AnimatedText
           text="The goal is not more media."
           as="h2"
@@ -57,7 +58,7 @@ export const Slide21FinalTakeaway = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="mb-12 mt-4"
+          className="mb-6 mt-4"
         >
           <TextShimmer delay={1.5} duration={2.2}>
             <span className="text-gradient-accent font-light text-5xl md:text-6xl lg:text-7xl inline-block leading-[1.15] tracking-[-0.03em]">The goal is better evidence of learning.</span>
@@ -69,19 +70,36 @@ export const Slide21FinalTakeaway = () => {
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-        className="w-20 h-px relative z-10 mb-10"
+        className="w-20 h-px relative z-10 mb-5"
         style={{ background: 'linear-gradient(90deg, transparent, var(--color-accent), transparent)' }}
       />
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1 }}
-        className="max-w-3xl relative z-10"
+        className="max-w-4xl relative z-10 mb-4"
       >
-        <p className="text-xl md:text-2xl text-[var(--color-text-secondary)] font-light leading-relaxed tracking-wide">
-          In the AI era, multimodality is not just a way to recover evidence after the fact. It is a way to redesign assignments so more of the learning becomes visible.
+        <p className="text-xl md:text-2xl text-[var(--color-text-secondary)] font-light leading-relaxed tracking-wide opacity-94">
+          In the AI era, multimodality is not decoration. <span className="text-[var(--color-text-primary)] font-normal">It is evidence design.</span>
         </p>
+      </motion.div>
+
+      {/* Closing visual — quiet metaphor in lower zone */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, delay: 1.3 }}
+        className="relative z-10"
+      >
+        <img
+          src={slideImage}
+          alt="Evidence design closing visual"
+          width={1536}
+          height={1024}
+          decoding="async"
+          className="max-w-[860px] w-full h-auto object-contain opacity-[0.84]"
+        />
       </motion.div>
     </div>
   );

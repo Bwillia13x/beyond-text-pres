@@ -66,7 +66,7 @@ export const Slide10VerificationParadox = () => {
   const labelReveal = useTransform(progress, [0.68, 0.82], [0, 1]);
 
   return (
-    <div className="flex flex-col items-center justify-center max-w-6xl mx-auto h-full px-8 relative z-10 text-center w-full">
+    <div className="presentation-safe flex flex-col items-center justify-center max-w-6xl mx-auto h-full px-8 relative z-10 text-center w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -79,6 +79,9 @@ export const Slide10VerificationParadox = () => {
         <h2 className="text-5xl md:text-6xl lg:text-7xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           The verification paradox
         </h2>
+        <p className="mt-4 text-xl text-[var(--color-text-secondary)] font-light">
+          As capability rises, artifact-based verification becomes less reliable
+        </p>
       </motion.div>
 
       {/* Animated Diverging Line Chart */}
@@ -132,13 +135,13 @@ export const Slide10VerificationParadox = () => {
           ))}
 
           {/* Y-axis labels */}
-          <text x={PAD_L - 12} y={PAD_T + 4} textAnchor="end" fill="var(--color-text-tertiary)" fontSize="10" fontFamily="var(--font-sans)" fontWeight="300">High</text>
-          <text x={PAD_L - 12} y={PAD_T + chartH + 4} textAnchor="end" fill="var(--color-text-tertiary)" fontSize="10" fontFamily="var(--font-sans)" fontWeight="300">Low</text>
+          <text x={PAD_L - 12} y={PAD_T + 4} textAnchor="end" fill="var(--color-text-secondary)" fontSize="13" fontFamily="var(--font-sans)" fontWeight="400" opacity="0.9">High</text>
+          <text x={PAD_L - 12} y={PAD_T + chartH + 4} textAnchor="end" fill="var(--color-text-secondary)" fontSize="13" fontFamily="var(--font-sans)" fontWeight="400" opacity="0.9">Low</text>
 
           {/* X-axis */}
           <line x1={PAD_L} y1={PAD_T + chartH} x2={PAD_L + chartW} y2={PAD_T + chartH} stroke="var(--color-border)" strokeWidth="0.8" opacity="0.5" />
-          <text x={PAD_L + chartW / 2} y={H - 8} textAnchor="middle" fill="var(--color-text-tertiary)" fontSize="10" fontFamily="var(--font-sans)" fontWeight="300">
-            Student expertise in domain →
+          <text x={PAD_L + chartW / 2} y={H - 6} textAnchor="middle" fill="var(--color-text-secondary)" fontSize="13" fontFamily="var(--font-sans)" fontWeight="400" opacity="0.9">
+            AI system capability →
           </text>
 
           {/* Fill areas — opacity-animated */}
@@ -207,10 +210,10 @@ export const Slide10VerificationParadox = () => {
 
           {/* Curve labels — appear after lines finish */}
           <motion.g style={{ opacity: labelReveal }}>
-            <text x={PAD_L + chartW * 0.80} y={PAD_T + 24} fill="var(--color-secondary)" fontSize="11" fontFamily="var(--font-sans)" fontWeight="500" opacity="0.9">
+            <text x={PAD_L + chartW * 0.78} y={PAD_T + 24} fill="var(--color-secondary)" fontSize="14" fontFamily="var(--font-sans)" fontWeight="600" opacity="0.95">
               AI Capability ↑
             </text>
-            <text x={PAD_L + chartW * 0.74} y={PAD_T + chartH - 10} fill="var(--color-accent)" fontSize="11" fontFamily="var(--font-sans)" fontWeight="500" opacity="0.9">
+            <text x={PAD_L + chartW * 0.72} y={PAD_T + chartH - 10} fill="var(--color-accent)" fontSize="14" fontFamily="var(--font-sans)" fontWeight="600" opacity="0.95">
               Auditability ↓
             </text>
           </motion.g>

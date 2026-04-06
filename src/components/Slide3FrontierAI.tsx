@@ -17,7 +17,7 @@ export const Slide3FrontierAI = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center max-w-7xl mx-auto h-full px-8 relative z-10 w-full">
+    <div className="presentation-safe flex flex-col justify-center max-w-7xl mx-auto h-full px-8 relative z-10 w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -39,17 +39,26 @@ export const Slide3FrontierAI = () => {
         className="grid md:grid-cols-3 gap-6 lg:gap-10 w-full"
       >
         <motion.div variants={itemVariants} className="card-glass p-8 rounded-2xl shadow-premium">
-          <div className="mb-6 flex items-center gap-3 text-[var(--color-text-tertiary)]">
+          <div className="mb-6 flex items-center gap-3 text-[var(--color-text-secondary)]">
             <Cpu className="w-5 h-5" />
-            <h3 className="uppercase tracking-[0.15em] text-[10px] font-medium">Frontier Models</h3>
+            <h3 className="uppercase tracking-[0.15em] text-xs font-medium">Reasoning Models</h3>
           </div>
-          <div className="space-y-4 mb-8">
-            <div className="p-3 bg-[var(--color-surface)] rounded-lg text-sm text-[var(--color-text-primary)] border border-transparent hover:border-[var(--color-border)] transition-colors">GPT-5.4 / Codex</div>
-            <div className="p-3 bg-[var(--color-surface)] rounded-lg text-sm text-[var(--color-text-primary)] border border-transparent hover:border-[var(--color-border)] transition-colors">Claude Opus 4.6 / Claude Code</div>
-            <div className="p-3 bg-[var(--color-surface)] rounded-lg text-sm text-[var(--color-text-primary)] border border-transparent hover:border-[var(--color-border)] transition-colors">Gemini 3.1 Pro / NotebookLM</div>
-          </div>
-          <p className="text-[var(--color-text-tertiary)] text-sm font-light leading-relaxed">
-            State-of-the-art systems converging on stronger reasoning, multimodality, and tool use.
+          <ul className="space-y-4 text-[var(--color-text-primary)] text-base font-light mb-8">
+            <li className="flex items-start gap-3">
+              <span className="text-[var(--color-text-tertiary)] mt-1">▹</span>
+              Stronger reasoning and planning
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-[var(--color-text-tertiary)] mt-1">▹</span>
+              Native multimodality
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-[var(--color-text-tertiary)] mt-1">▹</span>
+              Integrated tool use
+            </li>
+          </ul>
+          <p className="text-[var(--color-text-secondary)] text-base font-light leading-relaxed opacity-90">
+            Multiple frontier systems now converging on these capabilities simultaneously.
           </p>
         </motion.div>
 
@@ -59,9 +68,9 @@ export const Slide3FrontierAI = () => {
           </div>
           <div className="mb-6 flex items-center gap-3 text-[var(--color-accent)]">
             <LayoutTemplate className="w-5 h-5" />
-            <h3 className="uppercase tracking-[0.15em] text-[10px] font-semibold">Environment Shift</h3>
+            <h3 className="uppercase tracking-[0.15em] text-xs font-semibold">Persistent Work Environments</h3>
           </div>
-          <ul className="space-y-4 text-[var(--color-text-primary)] text-sm font-light mb-8">
+          <ul className="space-y-4 text-[var(--color-text-primary)] text-base font-light mb-8">
             <li className="flex items-start gap-3">
               <span className="text-[var(--color-accent)] mt-1 opacity-70">▹</span>
               Persistent context windows
@@ -79,20 +88,20 @@ export const Slide3FrontierAI = () => {
               Agentic workflow systems
             </li>
           </ul>
-          <p className="text-[var(--color-text-secondary)] text-sm font-light leading-relaxed">
-            The transition from single-prompt chat to persistent, multi-turn working environments.
+          <p className="text-[var(--color-text-secondary)] text-base font-light leading-relaxed">
+            No longer single-prompt chat — persistent, multi-session working environments.
           </p>
         </motion.div>
 
         <motion.div variants={itemVariants} className="card-glass p-8 rounded-2xl shadow-premium relative">
-          <div className="hidden md:flex absolute -left-8 top-1/2 -translate-y-1/2 text-[var(--color-text-tertiary)] z-10 w-10 h-10 bg-[var(--color-surface-elevated)] rounded-full items-center justify-center border border-[var(--color-border)] shadow-deep">
+          <div className="hidden md:flex absolute -left-8 top-1/2 -translate-y-1/2 text-[var(--color-text-secondary)] z-10 w-10 h-10 bg-[var(--color-surface-elevated)] rounded-full items-center justify-center border border-[var(--color-border)] shadow-deep opacity-85">
             <ArrowRight className="w-5 h-5" />
           </div>
-          <div className="mb-6 flex items-center gap-3 text-[var(--color-text-tertiary)]">
+          <div className="mb-6 flex items-center gap-3 text-[var(--color-text-secondary)]">
             <Boxes className="w-5 h-5" />
-            <h3 className="uppercase tracking-[0.15em] text-[10px] font-medium">Ecosystem Expansion</h3>
+            <h3 className="uppercase tracking-[0.15em] text-xs font-medium">Tool Ecosystem Expansion</h3>
           </div>
-          <ul className="space-y-4 text-[var(--color-text-secondary)] text-sm font-light mb-8">
+          <ul className="space-y-4 text-[var(--color-text-secondary)] text-base font-light mb-8">
             <li className="flex items-start gap-3">
               <span className="text-[var(--color-border)] mt-1">▹</span>
               Spreadsheet-native AI
@@ -107,11 +116,11 @@ export const Slide3FrontierAI = () => {
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[var(--color-border)] mt-1">▹</span>
-              Subagents & automations
+              Subagents and orchestration
             </li>
           </ul>
-          <p className="text-[var(--color-text-tertiary)] text-sm font-light leading-relaxed">
-            Tools increasingly orchestrating other tools to complete complex, multi-step objective chains.
+          <p className="text-[var(--color-text-secondary)] text-base font-light leading-relaxed">
+            Tools orchestrating other tools to complete multi-step tasks autonomously.
           </p>
         </motion.div>
       </motion.div>

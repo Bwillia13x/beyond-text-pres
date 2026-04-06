@@ -33,7 +33,7 @@ export const Slide5Threshold = () => {
   const fillY = useTransform(fillHeight, (h: number) => barY + barH - h);
 
   return (
-    <div className="flex flex-col items-center justify-center max-w-5xl mx-auto h-full px-8 relative z-10 text-center">
+    <div className="presentation-safe flex flex-col items-center justify-center max-w-5xl mx-auto h-full px-8 relative z-10 text-center">
       <motion.div 
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -45,7 +45,7 @@ export const Slide5Threshold = () => {
         </span>
         
         <AnimatedText
-          text="Frontier AI can now produce or substantially mediate much of the artifact work that higher education has traditionally used as evidence of learning."
+          text="Frontier AI can now produce or substantially mediate many artifacts long used as evidence of learning."
           as="h2"
           className="text-3xl md:text-4xl lg:text-5xl font-extralight text-[var(--color-text-primary)] leading-[1.2] tracking-[-0.03em]"
           delay={0.15}
@@ -110,10 +110,10 @@ export const Slide5Threshold = () => {
                     x={barX - 12} y={barY + barH * (1 - t) + 3}
                     textAnchor="end"
                     fill="var(--color-text-tertiary)"
-                    fontSize="8"
+                    fontSize="11"
                     fontFamily="var(--font-sans)"
-                    fontWeight="300"
-                    opacity="0.6"
+                    fontWeight="400"
+                    opacity="0.7"
                   >
                     {Math.round(t * 100)}
                   </text>
@@ -146,9 +146,9 @@ export const Slide5Threshold = () => {
             <text
               x={barX + barW + 18} y={thresholdY + 4}
               fill={crossed ? 'var(--color-accent)' : 'var(--color-text-tertiary)'}
-              fontSize="9"
+              fontSize="12"
               fontFamily="var(--font-sans)"
-              fontWeight={crossed ? '600' : '300'}
+              fontWeight={crossed ? '600' : '400'}
             >
               threshold
             </text>
@@ -196,9 +196,9 @@ export const Slide5Threshold = () => {
               x={barX + barW / 2} y={barY + barH + 20}
               textAnchor="middle"
               fill="var(--color-text-tertiary)"
-              fontSize="8"
+              fontSize="11"
               fontFamily="var(--font-sans)"
-              fontWeight="400"
+              fontWeight="500"
               letterSpacing="0.12em"
             >
               AI CAPABILITY
@@ -208,17 +208,17 @@ export const Slide5Threshold = () => {
 
         {/* Cards */}
         <div className="grid md:grid-cols-2 gap-6 flex-1">
-          <TiltCard className="flex flex-col items-center gap-4 card-glass rounded-2xl p-6 shadow-premium" tiltStrength={5}>
-            <ShieldCheck className="w-5 h-5 text-[var(--color-text-tertiary)] opacity-60" />
-            <p className="text-sm text-[var(--color-text-secondary)] font-light max-w-[250px] leading-relaxed">
-              This is <span className="text-[var(--color-text-primary)] font-medium">not a prevalence claim</span> about every student or every course taking this shortcut today.
+          <TiltCard className="flex flex-col items-center gap-4 card-glass rounded-2xl p-7 shadow-premium" tiltStrength={5}>
+            <ShieldCheck className="w-6 h-6 text-[var(--color-text-secondary)] opacity-75" />
+            <p className="text-lg text-[var(--color-text-secondary)] font-light max-w-[280px] leading-relaxed">
+              <span className="text-[var(--color-text-primary)] font-medium">Not a prevalence claim</span> about every student or every course.
             </p>
           </TiltCard>
-          
-          <TiltCard className="flex flex-col items-center gap-4 card-glass-accent rounded-2xl p-6 glow-accent" tiltStrength={5}>
-            <Target className="w-5 h-5 text-[var(--color-accent)]" />
-            <p className="text-sm text-[var(--color-text-secondary)] font-light max-w-[250px] leading-relaxed">
-              It is a <span className="text-[var(--color-accent)] font-medium">threshold claim</span> about what is now practically possible right now.
+
+          <TiltCard className="flex flex-col items-center gap-4 card-glass-accent rounded-2xl p-7 glow-accent" tiltStrength={5}>
+            <Target className="w-6 h-6 text-[var(--color-accent)]" />
+            <p className="text-lg text-[var(--color-text-secondary)] font-light max-w-[280px] leading-relaxed">
+              A <span className="text-[var(--color-accent)] font-medium">threshold claim</span> about what is now practically possible.
             </p>
           </TiltCard>
         </div>

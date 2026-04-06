@@ -1,53 +1,72 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Pencil } from 'lucide-react';
+import slideImage from '@/presentation_image_assets/pres8.webp';
 
 export const Slide19ParticipantActivity = () => {
-  const prompts = [
-    { number: "01", question: "What is this task really trying to reveal?" },
-    { number: "02", question: "What does the current artifact fail to show?" },
-    { number: "03", question: "What 2–3 evidence forms would reveal that better?" },
-    { number: "04", question: "What is the smallest stack that still makes the competence visible?" },
-    { number: "05", question: "What would the rubric actually reward in this stack?" },
-  ];
-
   return (
-    <div className="flex flex-col justify-center max-w-5xl mx-auto h-full px-8 relative z-10 w-full">
+    <div className="presentation-safe flex flex-col justify-center max-w-7xl mx-auto h-full px-8 relative z-10 w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center w-full mb-12"
+        className="text-center w-full mb-8"
       >
-        <div className="inline-flex items-center gap-3 card-glass-accent rounded-full px-5 py-2 mb-8 glow-accent">
+        <div className="inline-flex items-center gap-3 card-glass-accent rounded-full px-4 py-1.5 mb-6 shadow-premium">
           <Pencil className="w-4 h-4 text-[var(--color-accent)]" />
-          <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-accent)] font-semibold">Workshop Activity</span>
+          <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-accent)] font-semibold">Workshop Activity</span>
         </div>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
+        <h2 className="text-4xl md:text-5xl lg:text-[3.75rem] font-extralight text-[var(--color-text-primary)] tracking-[-0.03em] leading-[1.04]">
           Try it: redesign one assignment<br/>as an artifact stack
         </h2>
       </motion.div>
 
-      <div className="flex flex-col gap-4 w-full max-w-3xl mx-auto">
-        {prompts.map((p, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 + idx * 0.12 }}
-            className="flex items-start gap-6 card-glass rounded-xl p-6 hover:border-[var(--color-accent-muted)] transition-all duration-500 shadow-premium hover:shadow-deep"
-          >
-            <span className="text-sm font-mono text-[var(--color-accent)] opacity-60 mt-0.5 shrink-0">{p.number}</span>
-            <p className="text-lg text-[var(--color-text-primary)] font-light leading-relaxed">{p.question}</p>
-          </motion.div>
-        ))}
+      <div className="flex flex-col md:flex-row gap-6 lg:gap-8 w-full">
+        {/* Left column: workshop prompts */}
+        <div className="flex flex-col gap-3 flex-1 md:max-w-[65%]">
+          {[
+            { number: "01", content: <>What is this task really trying to <span className="text-[var(--color-accent)] font-medium">reveal</span>?</> },
+            { number: "02", content: <>What does the current artifact fail to <span className="text-[var(--color-accent)] font-medium">show</span>?</> },
+            { number: "03", content: <>What 2–3 evidence forms would reveal that <span className="text-[var(--color-accent)] font-medium">better</span>?</> },
+            { number: "04", content: <>What is the smallest stack that still makes the competence <span className="text-[var(--color-accent)] font-medium">visible</span>?</> },
+            { number: "05", content: <>What would the rubric actually <span className="text-[var(--color-accent)] font-medium">reward</span>?</> },
+          ].map((p, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 + idx * 0.12 }}
+              className="flex items-start gap-5 card-glass rounded-xl p-5 shadow-premium"
+            >
+              <span className="text-base font-mono text-[var(--color-accent)] opacity-50 mt-0.5 shrink-0">{p.number}</span>
+              <p className="text-lg text-[var(--color-text-primary)] font-light leading-relaxed">{p.content}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Right column: support image */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="hidden md:flex items-center justify-center flex-shrink-0 md:w-[30%]"
+        >
+          <img
+            src={slideImage}
+            alt="Workshop activity support diagram"
+            width={1536}
+            height={1024}
+            decoding="async"
+            className="w-full h-auto object-contain opacity-[0.88]"
+          />
+        </motion.div>
       </div>
 
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.1 }}
-        className="text-center text-sm text-[var(--color-text-tertiary)] font-light tracking-wide mt-10 opacity-70"
+        className="text-center text-lg text-[var(--color-text-secondary)] font-light tracking-wide mt-6 opacity-82"
       >
         Pick one real assignment and sketch a 2–3 artifact stack.
       </motion.p>

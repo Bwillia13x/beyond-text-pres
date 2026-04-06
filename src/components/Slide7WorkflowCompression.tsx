@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { motion } from 'motion/react';
-import { GitBranch, Sparkles, Filter, BrainCircuit } from 'lucide-react';
+import { ArrowRight, Filter, BrainCircuit } from 'lucide-react';
 
 // SVG-based animated flowing dot for precise control
 const FlowChannel: React.FC<{ dotCount?: number; color?: string; delayBase?: number }> = ({ dotCount = 3, color = 'var(--color-accent)', delayBase = 0 }) => {
@@ -45,27 +45,27 @@ const FlowChannel: React.FC<{ dotCount?: number; color?: string; delayBase?: num
 
 export const Slide7WorkflowCompression = () => {
   const courses = [
-    { name: "Course 1", color: 'var(--color-accent)', subagents: ["Schedule Mapping", "Deliverable Drafting", "Revision", "Code Support"] },
-    { name: "Course 2", color: 'var(--color-secondary)', subagents: ["Synthesis", "Slide Generation", "Deadline Tracking"] },
-    { name: "Course 3", color: 'var(--color-tertiary)', subagents: ["Reading Summaries", "Spreadsheet Logic", "Drafting"] },
+    { name: "Course 1", color: 'var(--color-accent)', phases: ["Ingest & Map", "Draft & Revise", "Polish & Submit"] },
+    { name: "Course 2", color: 'var(--color-secondary)', phases: ["Synthesis", "Slide Generation", "Deadline Tracking"] },
+    { name: "Course 3", color: 'var(--color-tertiary)', phases: ["Reading Summaries", "Spreadsheet Logic", "Drafting"] },
   ];
 
   return (
-    <div className="flex flex-col justify-center max-w-7xl mx-auto h-full px-6 lg:px-8 relative z-10 w-full">
+    <div className="presentation-safe flex flex-col justify-center max-w-7xl mx-auto h-full px-6 lg:px-8 relative z-10 w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center w-full mb-12"
+        className="text-center w-full mb-10"
       >
         <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
-          The Exploit in Action
+          The Scenario in Action
         </span>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           Day-one workflow compression
         </h2>
-        <p className="mt-4 text-lg text-[var(--color-text-secondary)] font-light">
-          Each course gets its own persistent environment running in parallel across the semester.
+        <p className="mt-4 text-xl text-[var(--color-text-secondary)] font-light">
+          Semester-long parallel tracks, each initialized from course materials on day one.
         </p>
       </motion.div>
 
@@ -78,17 +78,17 @@ export const Slide7WorkflowCompression = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="md:w-[180px] shrink-0 card-glass rounded-2xl p-5 flex flex-col shadow-premium relative"
         >
-          <div className="flex items-center gap-2 text-[var(--color-text-tertiary)] uppercase tracking-[0.15em] text-[10px] font-medium mb-5">
-            <Filter className="w-3.5 h-3.5" /> Uploads
+          <div className="flex items-center gap-2 text-[var(--color-text-secondary)] uppercase tracking-[0.15em] text-xs font-medium mb-5">
+            <Filter className="w-4 h-4" /> Uploads
           </div>
-          <div className="flex flex-wrap gap-1.5 text-xs font-light text-[var(--color-text-secondary)]">
+          <div className="flex flex-wrap gap-2 text-sm font-light text-[var(--color-text-secondary)]">
             {["Syllabus", "Rubric", "LMS", "Readings", "Slides", "Exemplars"].map((item, idx) => (
               <motion.span 
                 key={idx}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 + idx * 0.08 }}
-                className="bg-[var(--color-surface)] px-2 py-1 rounded border border-[var(--color-border)]"
+                className="bg-[var(--color-surface)] px-2.5 py-1.5 rounded border border-[var(--color-border)]"
               >
                 {item}
               </motion.span>
@@ -127,27 +127,19 @@ export const Slide7WorkflowCompression = () => {
                 <span className="font-semibold text-base text-[var(--color-text-primary)]">{course.name}</span>
               </div>
 
-              {/* Subagents Branching with flow */}
+              {/* Phase chips */}
               <div className="flex-1 w-full pl-5 sm:pl-6 border-l relative" style={{ borderColor: course.color + '40' }}>
-                <GitBranch className="absolute left-[-10px] top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: course.color }} />
-                <div className="flex flex-wrap gap-2">
-                  {course.subagents.map((agent, aIdx) => (
-                    <motion.div 
+                <ArrowRight className="absolute left-[-10px] top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: course.color }} />
+                <div className="flex flex-wrap gap-3">
+                  {course.phases.map((phase, aIdx) => (
+                    <motion.div
                       key={aIdx}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.4, delay: 0.8 + (idx * 0.2) + (aIdx * 0.1) }}
-                      className="flex items-center gap-1.5 bg-[var(--color-surface)] border border-[var(--color-border)] px-2.5 py-1 rounded-full shadow-sm relative"
+                      className="flex items-center gap-2 bg-[var(--color-surface)] border border-[var(--color-border)] px-4 py-2 rounded-lg shadow-sm"
                     >
-                      <Sparkles className="w-2.5 h-2.5 text-[var(--color-text-tertiary)]" />
-                      <span className="text-[11px] text-[var(--color-text-primary)]">{agent}</span>
-                      {/* Pulsing activity indicator per subagent */}
-                      <motion.div
-                        className="w-1 h-1 rounded-full"
-                        style={{ backgroundColor: course.color }}
-                        animate={{ opacity: [0.3, 1, 0.3] }}
-                        transition={{ duration: 1.5 + aIdx * 0.3, repeat: Infinity, ease: "easeInOut", delay: aIdx * 0.4 }}
-                      />
+                      <span className="text-sm font-light text-[var(--color-text-primary)]">{phase}</span>
                     </motion.div>
                   ))}
                 </div>

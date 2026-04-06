@@ -1,43 +1,15 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Scale, Code, BookOpen, FlaskConical, Megaphone } from 'lucide-react';
+import slideImage from '@/presentation_image_assets/pres7.webp';
 
 export const Slide17Disciplines = () => {
-  const disciplines = [
-    {
-      icon: Scale,
-      field: "Policy / Social Science",
-      stack: ["Policy memo", "Data visualization", "Oral briefing", "Rejected alternative + rationale"],
-    },
-    {
-      icon: Code,
-      field: "CS / Business / IS",
-      stack: ["Working prototype", "Technical documentation", "Demo video", "Architecture diagram"],
-    },
-    {
-      icon: BookOpen,
-      field: "Humanities / Media",
-      stack: ["Critical essay", "Annotated portfolio", "Audio commentary", "Peer critique commentary"],
-    },
-    {
-      icon: FlaskConical,
-      field: "STEM / Lab",
-      stack: ["Lab report", "Data notebook", "Method diagram", "Oral defense"],
-    },
-    {
-      icon: Megaphone,
-      field: "Entrepreneurship / Comms",
-      stack: ["Pitch deck", "Financial model", "Prototype", "Pitch defense"],
-    },
-  ];
-
   return (
-    <div className="flex flex-col justify-center max-w-7xl mx-auto h-full px-6 lg:px-8 relative z-10 w-full">
+    <div className="presentation-safe flex flex-col justify-center max-w-[1420px] mx-auto h-full px-8 relative z-10 w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center w-full mb-8"
+        className="text-center w-full mb-10"
       >
         <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
           Portability
@@ -45,43 +17,29 @@ export const Slide17Disciplines = () => {
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           Different disciplines, different stacks
         </h2>
-        <p className="text-xs text-[var(--color-text-muted)] tracking-[0.08em] uppercase mt-3 opacity-60 font-light">
-          Illustrative disciplinary stacks
-        </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5 w-full">
-        {disciplines.map((d, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
-            className="card-glass rounded-2xl p-5 flex flex-col hover:border-[var(--color-accent-muted)] transition-all duration-500 shadow-premium hover:shadow-deep"
-          >
-            <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-8 h-8 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] flex items-center justify-center">
-                <d.icon className="w-4 h-4 text-[var(--color-accent)]" />
-              </div>
-              <h3 className="text-sm font-semibold text-[var(--color-text-primary)] leading-tight">{d.field}</h3>
-            </div>
-            <div className="flex flex-col gap-2">
-              {d.stack.map((item, sIdx) => (
-                <div key={sIdx} className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] opacity-50 shrink-0" />
-                  <span className="text-xs text-[var(--color-text-secondary)] font-light">{item}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        ))}
-      </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="w-full flex justify-center mb-8"
+      >
+        <img
+          src={slideImage}
+          alt="Discipline-specific artifact stacks across fields"
+          width={1536}
+          height={1024}
+          decoding="async"
+          className="w-full h-auto max-h-[52vh] object-contain"
+        />
+      </motion.div>
 
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1 }}
-        className="text-center text-sm text-[var(--color-text-secondary)] font-light mt-10 tracking-wide italic opacity-70"
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="text-center text-lg md:text-xl text-[var(--color-text-secondary)] font-light tracking-wide italic opacity-82"
       >
         The principle stays the same; the stack changes with the discipline.
       </motion.p>

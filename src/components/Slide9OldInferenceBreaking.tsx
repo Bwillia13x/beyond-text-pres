@@ -57,15 +57,15 @@ export const Slide9OldInferenceBreaking = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center max-w-6xl mx-auto h-full px-8 relative z-10 w-full">
+    <div className="presentation-safe flex flex-col justify-center max-w-6xl mx-auto h-full px-8 relative z-10 w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center w-full mb-14"
+        className="text-center w-full mb-12"
       >
         <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
-          The Assessment Crisis
+          The Assessment Challenge
         </span>
         <AnimatedText
           text="The old inference is breaking"
@@ -180,7 +180,7 @@ export const Slide9OldInferenceBreaking = () => {
                 r={f.size}
                 fill={f.isEmber ? 'var(--color-accent)' : 'var(--color-text-primary)'}
                 filter={f.size > 3 ? 'url(#s9emberGlow)' : undefined}
-                initial={{ opacity: 0.95, cx: midX, cy: midY }}
+                initial={{ opacity: 0.95, cx: midX, cy: midY, r: f.size }}
                 animate={{
                   cx: midX + Math.cos(f.angle) * f.distance,
                   cy: midY + Math.sin(f.angle) * f.distance,
@@ -223,7 +223,7 @@ export const Slide9OldInferenceBreaking = () => {
             initial={{ opacity: 0, y: 4 }}
             animate={{ opacity: phase === 'broken' ? 0.7 : 0, y: phase === 'broken' ? 0 : 4 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="absolute -bottom-7 text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent)] font-semibold"
+            className="absolute -bottom-7 text-xs uppercase tracking-[0.18em] text-[var(--color-accent)] font-semibold"
           >
             inference gap
           </motion.span>
@@ -241,11 +241,11 @@ export const Slide9OldInferenceBreaking = () => {
             animate={{ opacity: phase === 'broken' ? 0.3 : 1 }}
             transition={{ duration: 1.2 }}
           >
-            <Brain className="w-8 h-8 text-[var(--color-text-secondary)]" />
+            <Brain className="w-8 h-8 text-[var(--color-text-primary)] opacity-75" />
           </motion.div>
           <motion.span 
             className="text-lg font-medium text-[var(--color-text-secondary)]"
-            animate={{ opacity: phase === 'broken' ? 0.35 : 1 }}
+            animate={{ opacity: phase === 'broken' ? 0.5 : 0.95 }}
             transition={{ duration: 1 }}
           >
             <span className={phase === 'broken' ? 'line-through decoration-[var(--color-accent)] decoration-2' : ''}>
@@ -262,25 +262,25 @@ export const Slide9OldInferenceBreaking = () => {
         transition={{ duration: 0.8, delay: 3 }}
         className="max-w-3xl mx-auto w-full card-glass rounded-2xl p-8 shadow-premium"
       >
-        <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-text-tertiary)] font-medium mb-6 text-center">
+        <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-secondary)] font-medium mb-6 text-center">
           A polished artifact may now reflect:
         </p>
         <div className="grid sm:grid-cols-2 gap-4">
-          <TiltCard className="flex items-start gap-3 bg-[var(--color-surface)] p-4 rounded-xl border border-[var(--color-border)]" tiltStrength={4}>
+          <TiltCard className="flex items-start gap-3 bg-[var(--color-surface)] p-5 rounded-xl border border-[var(--color-border)]" tiltStrength={4}>
             <CheckCircle2 className="w-5 h-5 text-[var(--color-text-secondary)] shrink-0 mt-0.5" />
-            <span className="text-[var(--color-text-primary)] font-light">Deep understanding</span>
+            <span className="text-base text-[var(--color-text-primary)] font-light">Deep understanding</span>
           </TiltCard>
-          <TiltCard className="flex items-start gap-3 bg-[var(--color-surface)] p-4 rounded-xl border border-[var(--color-border)]" tiltStrength={4}>
-            <Layers className="w-5 h-5 text-[var(--color-text-secondary)] shrink-0 mt-0.5" />
-            <span className="text-[var(--color-text-primary)] font-light">Shallow acceptance of AI work</span>
-          </TiltCard>
-          <TiltCard className="flex items-start gap-3 bg-[var(--color-surface)] p-4 rounded-xl border border-[var(--color-border)]" tiltStrength={4}>
+          <TiltCard className="flex items-start gap-3 bg-[var(--color-surface)] p-5 rounded-xl border border-[var(--color-border)]" tiltStrength={4}>
             <UserCog className="w-5 h-5 text-[var(--color-text-secondary)] shrink-0 mt-0.5" />
-            <span className="text-[var(--color-text-primary)] font-light">Careful orchestration</span>
+            <span className="text-base text-[var(--color-text-primary)] font-light">Careful orchestration</span>
           </TiltCard>
-          <TiltCard className="flex items-start gap-3 bg-[var(--color-surface)] p-4 rounded-xl border border-[var(--color-border)] opacity-60" tiltStrength={4}>
+          <TiltCard className="flex items-start gap-3 bg-[var(--color-surface)] p-5 rounded-xl border border-[var(--color-border)]" tiltStrength={4}>
+            <Layers className="w-5 h-5 text-[var(--color-text-secondary)] shrink-0 mt-0.5" />
+            <span className="text-base text-[var(--color-text-primary)] font-light">Shallow acceptance of AI work</span>
+          </TiltCard>
+          <TiltCard className="flex items-start gap-3 bg-[var(--color-surface)] p-5 rounded-xl border border-[var(--color-border)] opacity-75" tiltStrength={4}>
             <span className="w-5 h-5 flex items-center justify-center font-bold shrink-0 mt-0.5 text-[var(--color-text-tertiary)]">+</span>
-            <span className="text-[var(--color-text-secondary)] font-light italic">Some combination of the above</span>
+            <span className="text-base text-[var(--color-text-secondary)] font-light italic">Some combination of the above</span>
           </TiltCard>
         </div>
       </motion.div>

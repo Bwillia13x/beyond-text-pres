@@ -5,7 +5,7 @@ import { TextShimmer } from './TextShimmer';
 
 export const Slide1Title = () => {
   return (
-    <div className="flex flex-col items-center justify-center text-center max-w-5xl mx-auto relative h-full">
+    <div className="presentation-safe flex flex-col items-center justify-center text-center max-w-5xl mx-auto relative h-full">
       <motion.div 
         initial={{ opacity: 0, scale: 0.7 }}
         animate={{ 
@@ -54,7 +54,7 @@ export const Slide1Title = () => {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          className="w-24 h-px mx-auto mt-6 mb-8"
+          className="w-24 h-px mx-auto mt-5 mb-7"
           style={{ background: 'linear-gradient(90deg, transparent, var(--color-accent), transparent)' }}
         />
 
@@ -71,14 +71,20 @@ export const Slide1Title = () => {
         </motion.div>
       </motion.div>
 
-      <motion.p 
-        className="text-lg md:text-xl text-[var(--color-text-tertiary)] font-light max-w-3xl leading-relaxed relative z-10 mt-12 tracking-wide"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.7 }}
-        transition={{ delay: 0.8, duration: 1.5 }}
+      <motion.div
+        className="relative z-10 mt-12"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.0, duration: 1.2, ease: "easeOut" }}
       >
-        When one artifact is no longer enough
-      </motion.p>
+        <div
+          className="w-16 h-px mx-auto mb-6"
+          style={{ background: 'linear-gradient(90deg, transparent, var(--color-accent), transparent)' }}
+        />
+        <p className="text-2xl md:text-3xl text-[var(--color-text-primary)] font-light max-w-3xl leading-relaxed tracking-[-0.01em] opacity-90">
+          When one artifact is no longer enough
+        </p>
+      </motion.div>
     </div>
   );
 };
