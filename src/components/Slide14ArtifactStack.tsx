@@ -6,12 +6,12 @@ import { TiltCard } from './TiltCard';
 
 export const Slide14ArtifactStack = () => {
   const stackLayers = [
-    { icon: Frame, label: "Framing artifact", description: "Problem definition, scope, rationale", color: "var(--color-tertiary)" },
-    { icon: FileText, label: "Primary artifact", description: "Core analytical or creative output", color: "var(--color-text-primary)" },
-    { icon: Wrench, label: "Implementation artifact", description: "Build, code, prototype, model", color: "var(--color-secondary)" },
-    { icon: Presentation, label: "Communication artifact", description: "Infographic, slide, video, briefing", color: "var(--color-accent)" },
-    { icon: MessageSquare, label: "Explanation / defense artifact", description: "Oral defense, Q&A, annotation", color: "var(--color-text-primary)" },
-    { icon: RotateCcw, label: "Reflection / transfer artifact", description: "What transferred, what would change", color: "var(--color-tertiary)" },
+    { icon: Frame, labelStrong: "Problem framing", labelLight: "artifact", description: "Problem definition, scope, rationale", color: "var(--color-tertiary)" },
+    { icon: FileText, labelStrong: "Primary", labelLight: "artifact", description: "Core analytical or creative output", color: "var(--color-text-primary)" },
+    { icon: Wrench, labelStrong: "Build / implementation", labelLight: "artifact", description: "Code, prototype, model, operationalization", color: "var(--color-secondary)" },
+    { icon: Presentation, labelStrong: "Communication", labelLight: "artifact", description: "Infographic, slide, video, briefing", color: "var(--color-accent)" },
+    { icon: MessageSquare, labelStrong: "Explanation / defense", labelLight: "artifact", description: "Oral defense, Q&A, annotation", color: "var(--color-text-primary)" },
+    { icon: RotateCcw, labelStrong: "Reflection / transfer", labelLight: "artifact", description: "What transferred, what would change", color: "var(--color-tertiary)" },
   ];
 
   return (
@@ -32,6 +32,14 @@ export const Slide14ArtifactStack = () => {
           delay={0.1}
           staggerDelay={0.05}
         />
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-4 text-base md:text-lg text-[var(--color-text-tertiary)] font-light tracking-wide"
+        >
+          An illustrative stack — select the layers that best reveal the target competence.
+        </motion.p>
       </motion.div>
 
       <div className="flex flex-col gap-3 w-full max-w-4xl mx-auto mb-12">
@@ -57,7 +65,7 @@ export const Slide14ArtifactStack = () => {
                 <layer.icon className="w-5 h-5" style={{ color: layer.color }} />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-base font-medium text-[var(--color-text-primary)]">{layer.label}</h3>
+                <h3 className="text-base text-[var(--color-text-primary)]"><span className="font-medium">{layer.labelStrong}</span>{" "}<span className="font-light text-[var(--color-text-secondary)]">{layer.labelLight}</span></h3>
                 <p className="text-sm text-[var(--color-text-tertiary)] font-light">{layer.description}</p>
               </div>
               <span className="text-xs font-mono text-[var(--color-text-tertiary)] uppercase tracking-wider shrink-0 hidden md:block">
@@ -68,6 +76,15 @@ export const Slide14ArtifactStack = () => {
         ))}
       </div>
 
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.55 }}
+        transition={{ duration: 0.8, delay: 0.9 }}
+        className="text-center text-xs tracking-[0.15em] uppercase text-[var(--color-text-tertiary)] font-medium mb-6 max-w-3xl mx-auto"
+      >
+        Not every task needs every layer.
+      </motion.p>
+
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -75,7 +92,7 @@ export const Slide14ArtifactStack = () => {
         className="text-center max-w-3xl mx-auto"
       >
         <p className="text-lg text-[var(--color-text-secondary)] font-light leading-relaxed">
-          Instead of one final essay or report, design a <span className="text-[var(--color-text-primary)] font-medium">purposeful stack of artifacts</span> — each revealing a different aspect of competence.
+          Instead of one final essay or report, design a <span className="text-[var(--color-text-primary)] font-medium">selective stack of artifacts</span> — each chosen to reveal a different aspect of competence.
         </p>
       </motion.div>
     </div>

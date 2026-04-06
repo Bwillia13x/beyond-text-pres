@@ -6,9 +6,9 @@ export const Slide19ParticipantActivity = () => {
   const prompts = [
     { number: "01", question: "What is this task really trying to reveal?" },
     { number: "02", question: "What does the current artifact fail to show?" },
-    { number: "03", question: "What 2–3 output-types would reveal that better?" },
-    { number: "04", question: "What is the lightest viable stack?" },
-    { number: "05", question: "What would the rubric actually reward?" },
+    { number: "03", question: "What 2–3 evidence forms would reveal that better?" },
+    { number: "04", question: "What is the smallest stack that still makes the competence visible?" },
+    { number: "05", question: "What would the rubric actually reward in this stack?" },
   ];
 
   return (
@@ -42,6 +42,15 @@ export const Slide19ParticipantActivity = () => {
           </motion.div>
         ))}
       </div>
+
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.1 }}
+        className="text-center text-sm text-[var(--color-text-tertiary)] font-light tracking-wide mt-10 opacity-70"
+      >
+        Pick one real assignment and sketch a 2–3 artifact stack.
+      </motion.p>
     </div>
   );
 };

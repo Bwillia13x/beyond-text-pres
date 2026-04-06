@@ -52,7 +52,7 @@ export const Slide2Capability = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="card-glass-accent p-10 rounded-2xl relative flex flex-col justify-center glow-accent"
         >
-          <div className="absolute -left-5 lg:-left-8 top-1/2 -translate-y-1/2 bg-[var(--color-surface-elevated)] p-2 rounded-full border border-[var(--color-border-muted)] hidden md:flex items-center justify-center shadow-deep">
+          <div className="absolute -left-8 lg:-left-12 top-1/2 -translate-y-1/2 bg-[var(--color-surface-elevated)] w-10 h-10 rounded-full border border-[var(--color-border-muted)] hidden md:flex items-center justify-center shadow-deep">
             <ArrowRight className="w-5 h-5 text-[var(--color-accent)]" />
           </div>
           

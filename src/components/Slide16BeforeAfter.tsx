@@ -38,7 +38,7 @@ export const Slide16BeforeAfter = () => {
           <div className="flex-1 flex flex-col justify-center items-center text-center py-8">
             <FileText className="w-12 h-12 text-[var(--color-text-tertiary)] mb-6 opacity-50" />
             <p className="text-xl text-[var(--color-text-secondary)] font-light leading-relaxed">
-              Write a 2,000-word report on a public problem.
+              Write a 2,000-word policy analysis report on a public problem.
             </p>
           </div>
           <div className="mt-6 pt-6 border-t border-[var(--color-border)]">
@@ -63,7 +63,7 @@ export const Slide16BeforeAfter = () => {
               <FileText className="w-5 h-5 text-[var(--color-text-secondary)] shrink-0 mt-0.5" />
               <div>
                 <span className="text-sm font-medium text-[var(--color-text-primary)]">800-word policy memo</span>
-                <p className="text-xs text-[var(--color-text-tertiary)] font-light mt-1">Concise analytical writing</p>
+                <p className="text-xs text-[var(--color-text-tertiary)] font-light mt-1">Analytical reasoning</p>
               </div>
             </div>
             <div className="flex items-start gap-4 bg-[var(--color-surface)] p-4 rounded-xl border border-[var(--color-border)]">
@@ -84,7 +84,7 @@ export const Slide16BeforeAfter = () => {
               <XCircle className="w-5 h-5 text-[var(--color-text-secondary)] shrink-0 mt-0.5" />
               <div>
                 <span className="text-sm font-medium text-[var(--color-text-primary)]">One rejected alternative with justification</span>
-                <p className="text-xs text-[var(--color-text-tertiary)] font-light mt-1">Judgment and trade-off reasoning</p>
+                <p className="text-xs text-[var(--color-text-tertiary)] font-light mt-1">Judgment under trade-offs</p>
               </div>
             </div>
           </div>
@@ -93,6 +93,15 @@ export const Slide16BeforeAfter = () => {
         </motion.div>
       </div>
 
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="text-center text-xs tracking-[0.15em] uppercase text-[var(--color-text-tertiary)] font-medium mb-10 -mt-4"
+      >
+        One assignment, multiple evidence points
+      </motion.p>
+
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -100,7 +109,7 @@ export const Slide16BeforeAfter = () => {
         className="text-center max-w-3xl mx-auto"
       >
         <p className="text-lg text-[var(--color-text-secondary)] font-light leading-relaxed">
-          The redesigned version asks students to <span className="text-[var(--color-text-primary)] font-medium">analyze, visualize, communicate, and defend</span> — not just write fluent prose.
+          The redesign makes <span className="text-[var(--color-text-primary)] font-medium">analysis, communication, judgment, and defense</span> more visible than a text-only submission can.
         </p>
       </motion.div>
     </div>

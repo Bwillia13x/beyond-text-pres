@@ -44,7 +44,7 @@ export const Slide3FrontierAI = () => {
             <h3 className="uppercase tracking-[0.15em] text-[10px] font-medium">Frontier Models</h3>
           </div>
           <div className="space-y-4 mb-8">
-            <div className="p-3 bg-[var(--color-surface)] rounded-lg text-sm text-[var(--color-text-primary)] border border-transparent hover:border-[var(--color-border)] transition-colors">GPT-5.2 / Codex</div>
+            <div className="p-3 bg-[var(--color-surface)] rounded-lg text-sm text-[var(--color-text-primary)] border border-transparent hover:border-[var(--color-border)] transition-colors">GPT-5.4 / Codex</div>
             <div className="p-3 bg-[var(--color-surface)] rounded-lg text-sm text-[var(--color-text-primary)] border border-transparent hover:border-[var(--color-border)] transition-colors">Claude Opus 4.6 / Claude Code</div>
             <div className="p-3 bg-[var(--color-surface)] rounded-lg text-sm text-[var(--color-text-primary)] border border-transparent hover:border-[var(--color-border)] transition-colors">Gemini 3.1 Pro / NotebookLM</div>
           </div>
@@ -54,8 +54,8 @@ export const Slide3FrontierAI = () => {
         </motion.div>
 
         <motion.div variants={itemVariants} className="card-glass-accent p-8 rounded-2xl glow-accent relative">
-          <div className="hidden md:flex absolute -left-5 top-14 text-[var(--color-accent)] z-10 w-10 h-10 bg-[var(--color-surface-elevated)] rounded-full items-center justify-center border border-[var(--color-border)]">
-            <ArrowRight className="w-5 h-5 mx-auto" style={{translate: "0 20%"}}/>
+          <div className="hidden md:flex absolute -left-8 top-1/2 -translate-y-1/2 text-[var(--color-accent)] z-10 w-10 h-10 bg-[var(--color-surface-elevated)] rounded-full items-center justify-center border border-[var(--color-border)] shadow-deep">
+            <ArrowRight className="w-5 h-5" />
           </div>
           <div className="mb-6 flex items-center gap-3 text-[var(--color-accent)]">
             <LayoutTemplate className="w-5 h-5" />
@@ -85,8 +85,8 @@ export const Slide3FrontierAI = () => {
         </motion.div>
 
         <motion.div variants={itemVariants} className="card-glass p-8 rounded-2xl shadow-premium relative">
-          <div className="hidden md:flex absolute -left-5 top-14 text-[var(--color-text-tertiary)] z-10 w-10 h-10 bg-[var(--color-surface-elevated)] rounded-full items-center justify-center border border-[var(--color-border)]">
-            <ArrowRight className="w-5 h-5 mx-auto" style={{translate: "0 20%"}}/>
+          <div className="hidden md:flex absolute -left-8 top-1/2 -translate-y-1/2 text-[var(--color-text-tertiary)] z-10 w-10 h-10 bg-[var(--color-surface-elevated)] rounded-full items-center justify-center border border-[var(--color-border)] shadow-deep">
+            <ArrowRight className="w-5 h-5" />
           </div>
           <div className="mb-6 flex items-center gap-3 text-[var(--color-text-tertiary)]">
             <Boxes className="w-5 h-5" />

@@ -11,6 +11,7 @@ export const Slide18GradeConstruct = () => {
     "Technical coherence",
     "Audience fit",
     "Explanation / defense",
+    "Decision justification",
   ];
 
   return (
@@ -44,15 +45,15 @@ export const Slide18GradeConstruct = () => {
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
               <span className="text-[var(--color-text-tertiary)] mt-1">—</span>
-              <span className="text-[var(--color-text-secondary)] font-light">Grade the polish of the video</span>
+              <span className="text-[var(--color-text-secondary)] font-light">Overweight polish of the medium</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[var(--color-text-tertiary)] mt-1">—</span>
-              <span className="text-[var(--color-text-secondary)] font-light">Reward visual aesthetics over substance</span>
+              <span className="text-[var(--color-text-secondary)] font-light">Let aesthetics influence judgment of substance</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[var(--color-text-tertiary)] mt-1">—</span>
-              <span className="text-[var(--color-text-secondary)] font-light">Assess word count and format compliance</span>
+              <span className="text-[var(--color-text-secondary)] font-light">Use format compliance as a proxy for quality</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[var(--color-text-tertiary)] mt-1">—</span>
@@ -94,6 +95,9 @@ export const Slide18GradeConstruct = () => {
         transition={{ duration: 0.8, delay: 0.8 }}
         className="text-center max-w-3xl mx-auto"
       >
+        <p className="text-sm text-[var(--color-text-tertiary)] font-light tracking-wide mb-4 italic">
+          Rubric criteria should map to intended outcomes, not medium-specific polish.
+        </p>
         <p className="text-2xl md:text-3xl text-[var(--color-text-primary)] font-extralight leading-snug tracking-[-0.01em]">
           Assess the underlying competence,<br/>
           <span className="text-gradient-accent font-light mt-3 inline-block">not the polish of the medium.</span>

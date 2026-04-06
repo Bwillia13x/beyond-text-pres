@@ -43,26 +43,26 @@ export default function App() {
 
   const slides = useMemo<{ id: string; component: React.ReactNode; transition: TransitionMode }[]>(() => [
     { id: 'slide1', component: <Slide1Title />, transition: 'fade' },
-    { id: 'slide2', component: <Slide2Capability />, transition: 'slide' },
+    { id: 'slide2', component: <Slide2Capability />, transition: 'flip' },
     { id: 'slide3', component: <Slide3FrontierAI />, transition: 'slide' },
     { id: 'slide4', component: <Slide4WhyItMatters />, transition: 'slide' },
-    { id: 'slide5', component: <Slide5Threshold />, transition: 'fade' },
-    { id: 'slide6', component: <Slide6ExploitScenario />, transition: 'slide' },
+    { id: 'slide5', component: <Slide5Threshold />, transition: 'zoom' },
+    { id: 'slide6', component: <Slide6ExploitScenario />, transition: 'drop' },
     { id: 'slide7', component: <Slide7WorkflowCompression />, transition: 'slide' },
-    { id: 'slide8', component: <Slide8ExploitDemonstrates />, transition: 'rise' },
+    { id: 'slide8', component: <Slide8ExploitDemonstrates />, transition: 'flip' },
     { id: 'slide9', component: <Slide9OldInferenceBreaking />, transition: 'rise' },
     { id: 'slide10', component: <Slide10VerificationParadox />, transition: 'rise' },
-    { id: 'slide11', component: <Slide11BeyondTextPivot />, transition: 'fade' },
-    { id: 'slide12', component: <Slide12TwoUsesMultimodality />, transition: 'slide' },
+    { id: 'slide11', component: <Slide11BeyondTextPivot />, transition: 'zoom' },
+    { id: 'slide12', component: <Slide12TwoUsesMultimodality />, transition: 'flip' },
     { id: 'slide13', component: <Slide13AssignmentArchitecture />, transition: 'slide' },
-    { id: 'slide14', component: <Slide14ArtifactStack />, transition: 'rise' },
+    { id: 'slide14', component: <Slide14ArtifactStack />, transition: 'drop' },
     { id: 'slide15', component: <Slide15CompetenceMatrix />, transition: 'slide' },
-    { id: 'slide16', component: <Slide16BeforeAfter />, transition: 'slide' },
+    { id: 'slide16', component: <Slide16BeforeAfter />, transition: 'flip' },
     { id: 'slide17', component: <Slide17Disciplines />, transition: 'slide' },
-    { id: 'slide18', component: <Slide18GradeConstruct />, transition: 'rise' },
-    { id: 'slide19', component: <Slide19ParticipantActivity />, transition: 'fade' },
+    { id: 'slide18', component: <Slide18GradeConstruct />, transition: 'drop' },
+    { id: 'slide19', component: <Slide19ParticipantActivity />, transition: 'zoom' },
     { id: 'slide20', component: <Slide20Debrief />, transition: 'slide' },
-    { id: 'slide21', component: <Slide21FinalTakeaway />, transition: 'fade' },
+    { id: 'slide21', component: <Slide21FinalTakeaway />, transition: 'zoom' },
   ], []);
 
   const totalSlides = slides.length;
@@ -196,7 +196,7 @@ export default function App() {
       </div>
 
       {/* Main Content Area */}
-      <main className="relative z-10 flex-1 w-full h-full">
+      <main className="relative z-10 flex-1 w-full h-full" style={{ perspective: 1200 }}>
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <SlideWrapper key={page} direction={direction} transitionMode={slides[page]?.transition ?? 'slide'}>
             {renderSlide()}

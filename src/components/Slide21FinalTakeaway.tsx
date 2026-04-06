@@ -77,10 +77,10 @@ export const Slide21FinalTakeaway = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1 }}
-        className="max-w-2xl relative z-10"
+        className="max-w-3xl relative z-10"
       >
-        <p className="text-lg md:text-xl text-[var(--color-text-secondary)] font-light leading-relaxed tracking-wide">
-          In the AI era, multimodality is not only a way to check text after the fact. It is a way to <strong className="font-medium text-[var(--color-text-primary)]">redesign assignments</strong> so students must build, visualize, communicate, and defend knowledge across multiple forms.
+        <p className="text-xl md:text-2xl text-[var(--color-text-secondary)] font-light leading-relaxed tracking-wide">
+          In the AI era, multimodality is not just a way to recover evidence after the fact. It is a way to redesign assignments so more of the learning becomes visible.
         </p>
       </motion.div>
     </div>

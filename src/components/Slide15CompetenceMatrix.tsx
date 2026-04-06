@@ -6,7 +6,7 @@ export const Slide15CompetenceMatrix = () => {
     { goal: "Analysis", output: "Memo / explanation", reveals: "Reasoning quality" },
     { goal: "Implementation", output: "Prototype / code / model", reveals: "Execution capability" },
     { goal: "Communication", output: "Infographic / video / slide", reveals: "Audience translation" },
-    { goal: "Structure", output: "Diagram / data visualization", reveals: "Organizational thinking" },
+    { goal: "Analytical structure", output: "Diagram / data visualization", reveals: "Structural reasoning" },
     { goal: "Judgment", output: "Oral defense / critique", reveals: "Defensibility under questioning" },
   ];
 
@@ -24,6 +24,9 @@ export const Slide15CompetenceMatrix = () => {
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           Choose outputs by competence, not novelty
         </h2>
+        <span className="text-[11px] uppercase tracking-[0.18em] text-[var(--color-text-tertiary)] font-light mt-4 block opacity-60">
+          Illustrative pairings
+        </span>
       </motion.div>
 
       <motion.div 
@@ -39,7 +42,7 @@ export const Slide15CompetenceMatrix = () => {
               <span className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-accent)] font-semibold">Learning Goal</span>
             </div>
             <div className="bg-[var(--color-surface-overlay)] p-4">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-accent)] font-semibold">Output-Type</span>
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-accent)] font-semibold">Example Evidence Form</span>
             </div>
             <div className="bg-[var(--color-surface-overlay)] p-4">
               <span className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-accent)] font-semibold">What It Reveals</span>
@@ -76,8 +79,8 @@ export const Slide15CompetenceMatrix = () => {
         className="text-center max-w-3xl mx-auto"
       >
         <p className="text-2xl md:text-3xl text-[var(--color-text-primary)] font-extralight leading-snug tracking-[-0.01em]">
-          Choose outputs by competence,<br/>
-          <span className="text-gradient-accent font-light mt-3 inline-block">not by what feels modern.</span>
+          The question is not what looks modern,<br/>
+          <span className="text-gradient-accent font-light mt-3 inline-block">but what makes the learning visible.</span>
         </p>
       </motion.div>
     </div>

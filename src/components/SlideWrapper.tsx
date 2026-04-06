@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-export type TransitionMode = 'slide' | 'fade' | 'rise';
+export type TransitionMode = 'slide' | 'fade' | 'rise' | 'zoom' | 'flip' | 'drop';
 
 interface SlideWrapperProps {
   children: React.ReactNode;
@@ -84,6 +84,87 @@ const transitionVariants = {
       filter: "blur(6px)",
     }),
   },
+  zoom: {
+    enter: (direction: number) => ({
+      x: 0,
+      y: direction > 0 ? 40 : -40,
+      opacity: 0,
+      scale: 0.25,
+      filter: "blur(20px)",
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      filter: "blur(0px)",
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: 0,
+      y: direction > 0 ? -30 : 30,
+      opacity: 0,
+      scale: 2.2,
+      filter: "blur(20px)",
+    }),
+  },
+  flip: {
+    enter: (direction: number) => ({
+      x: 0,
+      y: 0,
+      opacity: 0,
+      scale: 0.88,
+      rotateY: direction > 0 ? 75 : -75,
+      filter: "blur(6px)",
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      rotateY: 0,
+      filter: "blur(0px)",
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: 0,
+      y: 0,
+      opacity: 0,
+      scale: 0.88,
+      rotateY: direction > 0 ? -75 : 75,
+      filter: "blur(6px)",
+    }),
+  },
+  drop: {
+    enter: (direction: number) => ({
+      x: 0,
+      y: direction > 0 ? -800 : 800,
+      opacity: 0,
+      scale: 0.75,
+      rotateX: direction > 0 ? 12 : -12,
+      filter: "blur(8px)",
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      rotateX: 0,
+      filter: "blur(0px)",
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: 0,
+      y: direction > 0 ? 800 : -800,
+      opacity: 0,
+      scale: 0.65,
+      rotateX: direction > 0 ? -8 : 8,
+      filter: "blur(8px)",
+    }),
+  },
 };
 
 const transitionConfigs: Record<TransitionMode, Record<string, unknown>> = {
@@ -104,11 +185,29 @@ const transitionConfigs: Record<TransitionMode, Record<string, unknown>> = {
     scale: { duration: 0.5, ease: "easeOut" },
     filter: { duration: 0.45, ease: "easeOut" },
   },
+  zoom: {
+    scale: { type: "spring", stiffness: 100, damping: 22, mass: 1.2 },
+    y: { type: "spring", stiffness: 100, damping: 22, mass: 1.2 },
+    opacity: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
+    filter: { duration: 0.5, ease: "easeOut" },
+  },
+  flip: {
+    rotateY: { type: "spring", stiffness: 80, damping: 18, mass: 1.3 },
+    opacity: { duration: 0.35, ease: "easeInOut" },
+    scale: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+    filter: { duration: 0.35, ease: "easeInOut" },
+  },
+  drop: {
+    y: { type: "spring", stiffness: 80, damping: 19, mass: 1.4 },
+    opacity: { duration: 0.35, ease: "easeOut" },
+    scale: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+    rotateX: { type: "spring", stiffness: 100, damping: 22 },
+    filter: { duration: 0.4, ease: "easeOut" },
+  },
 };
 
 export const SlideWrapper = ({ children, direction, transitionMode = 'slide' }: SlideWrapperProps) => {
   const variants = transitionVariants[transitionMode];
-
   return (
     <motion.div
       custom={direction}
@@ -118,6 +217,7 @@ export const SlideWrapper = ({ children, direction, transitionMode = 'slide' }: 
       exit="exit"
       transition={transitionConfigs[transitionMode]}
       className="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-8 md:p-20"
+      style={transitionMode === 'flip' ? { backfaceVisibility: 'hidden' } : undefined}
     >
       {children}
     </motion.div>

@@ -7,7 +7,7 @@ export const Slide17Disciplines = () => {
     {
       icon: Scale,
       field: "Policy / Social Science",
-      stack: ["Policy memo", "Data visualization", "Oral briefing", "Rejected alternative"],
+      stack: ["Policy memo", "Data visualization", "Oral briefing", "Rejected alternative + rationale"],
     },
     {
       icon: Code,
@@ -17,7 +17,7 @@ export const Slide17Disciplines = () => {
     {
       icon: BookOpen,
       field: "Humanities / Media",
-      stack: ["Critical essay", "Annotated portfolio", "Audio commentary", "Peer critique"],
+      stack: ["Critical essay", "Annotated portfolio", "Audio commentary", "Peer critique commentary"],
     },
     {
       icon: FlaskConical,
@@ -27,7 +27,7 @@ export const Slide17Disciplines = () => {
     {
       icon: Megaphone,
       field: "Entrepreneurship / Comms",
-      stack: ["Pitch deck", "Financial model", "Prototype", "Live Q&A"],
+      stack: ["Pitch deck", "Financial model", "Prototype", "Pitch defense"],
     },
   ];
 
@@ -37,7 +37,7 @@ export const Slide17Disciplines = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center w-full mb-12"
+        className="text-center w-full mb-8"
       >
         <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
           Portability
@@ -45,6 +45,9 @@ export const Slide17Disciplines = () => {
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           Different disciplines, different stacks
         </h2>
+        <p className="text-xs text-[var(--color-text-muted)] tracking-[0.08em] uppercase mt-3 opacity-60 font-light">
+          Illustrative disciplinary stacks
+        </p>
       </motion.div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5 w-full">
@@ -73,6 +76,15 @@ export const Slide17Disciplines = () => {
           </motion.div>
         ))}
       </div>
+
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1 }}
+        className="text-center text-sm text-[var(--color-text-secondary)] font-light mt-10 tracking-wide italic opacity-70"
+      >
+        The principle stays the same; the stack changes with the discipline.
+      </motion.p>
     </div>
   );
 };
