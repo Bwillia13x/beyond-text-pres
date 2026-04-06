@@ -24,14 +24,13 @@ export const Slide5Threshold = () => {
           delay={0.15}
           staggerDelay={0.025}
         />
-        <div className="mb-16" />
       </motion.div>
 
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="grid md:grid-cols-2 gap-8 w-full max-w-3xl pt-12 relative"
+        className="grid md:grid-cols-2 gap-8 w-full max-w-3xl mt-16 pt-12 relative"
       >
         <div className="absolute top-0 left-[10%] right-[10%] h-px" style={{ background: 'linear-gradient(90deg, transparent, var(--color-border), transparent)' }} />
         <TiltCard className="flex flex-col items-center gap-4 card-glass rounded-2xl p-6 shadow-premium" tiltStrength={5}>

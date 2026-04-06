@@ -27,7 +27,7 @@ export const Slide9OldInferenceBreaking = () => {
       </motion.div>
 
       {/* Inference Diagram */}
-      <div className="flex items-center justify-center gap-4 md:gap-12 w-full max-w-4xl mx-auto mb-20 relative">
+      <div className="flex items-center justify-center gap-4 md:gap-12 w-full max-w-4xl mx-auto mb-16 relative">
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}

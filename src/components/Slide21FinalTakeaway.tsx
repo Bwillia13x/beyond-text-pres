@@ -49,7 +49,7 @@ export const Slide21FinalTakeaway = () => {
         <AnimatedText
           text="The goal is not more media."
           as="h2"
-          className="text-4xl md:text-5xl lg:text-7xl font-extralight text-[var(--color-text-primary)] leading-[1.15] tracking-[-0.03em]"
+          className="text-5xl md:text-6xl lg:text-7xl font-extralight text-[var(--color-text-primary)] leading-[1.15] tracking-[-0.03em]"
           delay={0.2}
           staggerDelay={0.06}
         />
@@ -60,7 +60,7 @@ export const Slide21FinalTakeaway = () => {
           className="mb-12 mt-4"
         >
           <TextShimmer delay={1.5} duration={2.2}>
-            <span className="text-gradient-accent font-light text-4xl md:text-5xl lg:text-7xl inline-block leading-[1.15] tracking-[-0.03em]">The goal is better evidence of learning.</span>
+            <span className="text-gradient-accent font-light text-5xl md:text-6xl lg:text-7xl inline-block leading-[1.15] tracking-[-0.03em]">The goal is better evidence of learning.</span>
           </TextShimmer>
         </motion.div>
       </motion.div>

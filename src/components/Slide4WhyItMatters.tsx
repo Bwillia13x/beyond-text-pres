@@ -11,6 +11,9 @@ export const Slide4WhyItMatters = () => {
         transition={{ duration: 0.8 }}
         className="w-full text-center mb-16"
       >
+        <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
+          The Stakes
+        </span>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           Why this matters to postsecondary education
         </h2>
@@ -87,7 +90,7 @@ export const Slide4WhyItMatters = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1 }}
-        className="mt-20 text-center"
+        className="mt-16 text-center"
       >
         <p className="text-2xl md:text-3xl text-[var(--color-text-primary)] font-extralight leading-relaxed max-w-3xl mx-auto tracking-[-0.01em]">
           The real challenge is not just AI-generated text.<br/>

@@ -10,13 +10,16 @@ export const Slide7WorkflowCompression = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center max-w-7xl mx-auto h-full px-4 lg:px-8 relative z-10 w-full">
+    <div className="flex flex-col justify-center max-w-7xl mx-auto h-full px-6 lg:px-8 relative z-10 w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center w-full mb-10"
+        className="text-center w-full mb-12"
       >
+        <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
+          The Exploit in Action
+        </span>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           Day-one workflow compression
         </h2>

@@ -49,13 +49,12 @@ export const Slide1Title = () => {
           delay={0.1}
           staggerDelay={0.08}
         />
-        <div className="mb-6" />
 
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          className="w-24 h-px mx-auto mb-8"
+          className="w-24 h-px mx-auto mt-6 mb-8"
           style={{ background: 'linear-gradient(90deg, transparent, var(--color-accent), transparent)' }}
         />
 

@@ -19,7 +19,7 @@ export const Slide10VerificationParadox = () => {
         </h2>
       </motion.div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24 w-full mb-20 relative">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24 w-full mb-16 relative">
         {/* Leverage / Capability */}
         <motion.div 
           initial={{ opacity: 0, x: -30, y: 30 }}
