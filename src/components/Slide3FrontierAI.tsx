@@ -24,10 +24,10 @@ export const Slide3FrontierAI = () => {
         transition={{ duration: 0.8 }}
         className="w-full mb-12"
       >
-        <span className="text-[var(--color-accent)] uppercase tracking-widest text-xs font-semibold mb-4 block">
+        <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
           The Capability Landscape
         </span>
-        <h2 className="text-4xl md:text-5xl font-light text-[var(--color-text-primary)] tracking-tight">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           Frontier AI today: models, environments, workflows
         </h2>
       </motion.div>
@@ -38,10 +38,10 @@ export const Slide3FrontierAI = () => {
         animate="visible"
         className="grid md:grid-cols-3 gap-6 lg:gap-10 w-full"
       >
-        <motion.div variants={itemVariants} className="bg-[var(--color-surface-elevated)] p-8 rounded-2xl border border-[var(--color-border)]">
+        <motion.div variants={itemVariants} className="card-glass p-8 rounded-2xl shadow-premium">
           <div className="mb-6 flex items-center gap-3 text-[var(--color-text-tertiary)]">
             <Cpu className="w-5 h-5" />
-            <h3 className="uppercase tracking-widest text-xs font-semibold">Frontier Models</h3>
+            <h3 className="uppercase tracking-[0.15em] text-[10px] font-medium">Frontier Models</h3>
           </div>
           <div className="space-y-4 mb-8">
             <div className="p-3 bg-[var(--color-surface)] rounded-lg text-sm text-[var(--color-text-primary)] border border-transparent hover:border-[var(--color-border)] transition-colors">GPT-5.2 / Codex</div>
@@ -53,13 +53,13 @@ export const Slide3FrontierAI = () => {
           </p>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="bg-[var(--color-accent-subtle)] p-8 rounded-2xl border border-[var(--color-accent-muted)] shadow-[0_0_20px_var(--color-accent-subtle)] relative">
+        <motion.div variants={itemVariants} className="card-glass-accent p-8 rounded-2xl glow-accent relative">
           <div className="hidden md:block absolute -left-5 top-14 text-[var(--color-accent)] z-10 w-10 h-10 bg-[var(--color-surface-elevated)] rounded-full flex items-center justify-center border border-[var(--color-border)]">
             <ArrowRight className="w-5 h-5 mx-auto" style={{translate: "0 20%"}}/>
           </div>
           <div className="mb-6 flex items-center gap-3 text-[var(--color-accent)]">
             <LayoutTemplate className="w-5 h-5" />
-            <h3 className="uppercase tracking-widest text-xs font-semibold">Environment Shift</h3>
+            <h3 className="uppercase tracking-[0.15em] text-[10px] font-semibold">Environment Shift</h3>
           </div>
           <ul className="space-y-4 text-[var(--color-text-primary)] text-sm font-light mb-8">
             <li className="flex items-start gap-3">
@@ -84,13 +84,13 @@ export const Slide3FrontierAI = () => {
           </p>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="bg-[var(--color-surface-elevated)] p-8 rounded-2xl border border-[var(--color-border)] relative">
+        <motion.div variants={itemVariants} className="card-glass p-8 rounded-2xl shadow-premium relative">
           <div className="hidden md:block absolute -left-5 top-14 text-[var(--color-text-tertiary)] z-10 w-10 h-10 bg-[var(--color-surface-elevated)] rounded-full flex items-center justify-center border border-[var(--color-border)]">
             <ArrowRight className="w-5 h-5 mx-auto" style={{translate: "0 20%"}}/>
           </div>
           <div className="mb-6 flex items-center gap-3 text-[var(--color-text-tertiary)]">
             <Boxes className="w-5 h-5" />
-            <h3 className="uppercase tracking-widest text-xs font-semibold">Ecosystem Expansion</h3>
+            <h3 className="uppercase tracking-[0.15em] text-[10px] font-medium">Ecosystem Expansion</h3>
           </div>
           <ul className="space-y-4 text-[var(--color-text-secondary)] text-sm font-light mb-8">
             <li className="flex items-start gap-3">

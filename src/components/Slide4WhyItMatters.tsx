@@ -11,7 +11,7 @@ export const Slide4WhyItMatters = () => {
         transition={{ duration: 0.8 }}
         className="w-full text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-light text-[var(--color-text-primary)] tracking-tight">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           Why this matters to postsecondary education
         </h2>
       </motion.div>
@@ -23,7 +23,7 @@ export const Slide4WhyItMatters = () => {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex-1 w-full bg-[var(--color-surface-elevated)] p-10 rounded-2xl border border-[var(--color-border)] text-center relative"
+          className="flex-1 w-full card-glass p-10 rounded-2xl text-center relative shadow-premium"
         >
           <div className="mb-6 flex justify-center text-[var(--color-accent)]">
             <Network className="w-10 h-10" />
@@ -59,8 +59,8 @@ export const Slide4WhyItMatters = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex-1 w-full relative"
         >
-          <div className="bg-[var(--color-accent-subtle)] p-8 rounded-2xl border border-[var(--color-accent-muted)] shadow-[0_0_30px_var(--color-accent-subtle)]">
-            <h3 className="text-lg uppercase tracking-widest text-[var(--color-accent)] font-semibold mb-6 text-center">
+          <div className="card-glass-accent p-8 rounded-2xl glow-accent">
+            <h3 className="text-sm uppercase tracking-[0.15em] text-[var(--color-accent)] font-semibold mb-6 text-center">
               Computer-Mediated Artifact Production
             </h3>
             <div className="grid grid-cols-2 gap-4">
@@ -89,9 +89,9 @@ export const Slide4WhyItMatters = () => {
         transition={{ duration: 0.8, delay: 1 }}
         className="mt-20 text-center"
       >
-        <p className="text-2xl md:text-3xl text-[var(--color-text-primary)] font-light leading-relaxed max-w-3xl mx-auto">
+        <p className="text-2xl md:text-3xl text-[var(--color-text-primary)] font-extralight leading-relaxed max-w-3xl mx-auto tracking-[-0.01em]">
           The real challenge is not just AI-generated text.<br/>
-          <span className="text-[var(--color-accent)] font-normal mt-2 inline-block">It is AI-mediated workflow.</span>
+          <span className="text-gradient-accent font-light mt-2 inline-block">It is AI-mediated workflow.</span>
         </p>
       </motion.div>
     </div>

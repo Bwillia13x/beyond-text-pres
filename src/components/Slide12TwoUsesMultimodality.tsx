@@ -11,10 +11,10 @@ export const Slide12TwoUsesMultimodality = () => {
         transition={{ duration: 0.8 }}
         className="text-center w-full mb-16"
       >
-        <span className="text-[var(--color-accent)] uppercase tracking-widest text-xs font-semibold mb-4 block">
+        <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
           Two Distinct Strategies
         </span>
-        <h2 className="text-4xl md:text-5xl font-light text-[var(--color-text-primary)] tracking-tight">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           Two uses of multimodality
         </h2>
       </motion.div>
@@ -24,11 +24,11 @@ export const Slide12TwoUsesMultimodality = () => {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-[var(--color-surface-elevated)] p-10 rounded-2xl border border-[var(--color-border)] flex flex-col"
+          className="card-glass p-10 rounded-2xl flex flex-col shadow-premium"
         >
           <div className="mb-6 flex items-center gap-3 text-[var(--color-secondary)]">
             <ShieldCheck className="w-5 h-5" />
-            <span className="uppercase tracking-widest text-xs font-semibold">Evidence Recovery</span>
+            <span className="uppercase tracking-[0.15em] text-[10px] font-semibold">Evidence Recovery</span>
           </div>
           <h3 className="text-2xl font-medium text-[var(--color-text-primary)] mb-4">
             Multimodality as evidence recovery
@@ -49,11 +49,11 @@ export const Slide12TwoUsesMultimodality = () => {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="bg-[var(--color-accent-subtle)] p-10 rounded-2xl border border-[var(--color-accent-muted)] shadow-[0_0_30px_var(--color-accent-subtle)] flex flex-col"
+          className="card-glass-accent p-10 rounded-2xl flex flex-col glow-accent"
         >
           <div className="mb-6 flex items-center gap-3 text-[var(--color-accent)]">
             <Compass className="w-5 h-5" />
-            <span className="uppercase tracking-widest text-xs font-semibold">Assignment Architecture</span>
+            <span className="uppercase tracking-[0.15em] text-[10px] font-semibold">Assignment Architecture</span>
           </div>
           <h3 className="text-2xl font-medium text-[var(--color-text-primary)] mb-4">
             Multimodality as assignment architecture

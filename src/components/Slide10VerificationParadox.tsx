@@ -11,10 +11,10 @@ export const Slide10VerificationParadox = () => {
         transition={{ duration: 0.8 }}
         className="w-full mb-16"
       >
-        <span className="text-[var(--color-accent)] uppercase tracking-widest text-xs font-semibold mb-4 block">
+        <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
           The Core Tension
         </span>
-        <h2 className="text-5xl md:text-6xl font-light text-[var(--color-text-primary)] tracking-tight">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           The verification paradox
         </h2>
       </motion.div>
@@ -27,7 +27,7 @@ export const Slide10VerificationParadox = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-col items-center gap-6 z-10 w-full max-w-[250px]"
         >
-          <div className="w-24 h-24 rounded-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] flex items-center justify-center shadow-lg relative overflow-hidden group">
+          <div className="w-24 h-24 rounded-full card-glass flex items-center justify-center shadow-deep relative overflow-hidden group">
             <motion.div 
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -58,7 +58,7 @@ export const Slide10VerificationParadox = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col items-center gap-6 z-10 w-full max-w-[250px]"
         >
-          <div className="w-24 h-24 rounded-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] flex items-center justify-center shadow-lg">
+          <div className="w-24 h-24 rounded-full card-glass flex items-center justify-center shadow-deep">
             <Search className="w-8 h-8 text-[var(--color-text-tertiary)]" />
           </div>
           <div className="text-center">
@@ -74,9 +74,9 @@ export const Slide10VerificationParadox = () => {
         transition={{ duration: 0.8, delay: 1.2 }}
         className="max-w-4xl mx-auto"
       >
-        <p className="text-3xl md:text-4xl text-[var(--color-text-primary)] font-light leading-snug">
+        <p className="text-3xl md:text-4xl text-[var(--color-text-primary)] font-extralight leading-snug tracking-[-0.02em]">
           Capability expands fastest <br/>
-          <span className="text-[var(--color-accent)] font-normal mt-3 inline-block">where auditability is weakest.</span>
+          <span className="text-gradient-accent font-light mt-3 inline-block">where auditability is weakest.</span>
         </p>
       </motion.div>
     </div>

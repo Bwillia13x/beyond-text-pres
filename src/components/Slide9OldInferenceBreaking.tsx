@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { FileBadge, Brain, Unlink, CheckCircle2, UserCog, Layers } from 'lucide-react';
+import { AnimatedText } from './AnimatedText';
+import { TiltCard } from './TiltCard';
+import { DrawLine } from './DrawLine';
 
 export const Slide9OldInferenceBreaking = () => {
   return (
@@ -11,12 +14,16 @@ export const Slide9OldInferenceBreaking = () => {
         transition={{ duration: 0.8 }}
         className="text-center w-full mb-16"
       >
-        <span className="text-[var(--color-accent)] uppercase tracking-widest text-xs font-semibold mb-4 block">
+        <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
           The Assessment Crisis
         </span>
-        <h2 className="text-4xl md:text-5xl font-light text-[var(--color-text-primary)] tracking-tight">
-          The old inference is breaking
-        </h2>
+        <AnimatedText
+          text="The old inference is breaking"
+          as="h2"
+          className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]"
+          delay={0.1}
+          staggerDelay={0.05}
+        />
       </motion.div>
 
       {/* Inference Diagram */}
@@ -27,7 +34,7 @@ export const Slide9OldInferenceBreaking = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-col items-center gap-4 z-10"
         >
-          <div className="w-20 h-20 rounded-2xl bg-[var(--color-surface-elevated)] border border-[var(--color-border)] flex items-center justify-center shadow-lg">
+          <div className="w-20 h-20 rounded-2xl card-glass flex items-center justify-center shadow-deep">
             <FileBadge className="w-8 h-8 text-[var(--color-text-primary)]" />
           </div>
           <span className="text-lg font-medium text-[var(--color-text-primary)]">Polished Artifact</span>
@@ -38,8 +45,9 @@ export const Slide9OldInferenceBreaking = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="flex-1 flex justify-center items-center relative z-0 h-0.5 bg-[var(--color-border)] md:mx-4"
+          className="flex-1 flex justify-center items-center relative z-0 md:mx-4"
         >
+          <DrawLine delay={0.9} duration={0.6} color="var(--color-border)" className="w-full" />
           <motion.div 
             initial={{ scale: 0, rotate: -45 }}
             animate={{ scale: 1, rotate: 0 }}
@@ -56,7 +64,7 @@ export const Slide9OldInferenceBreaking = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col items-center gap-4 z-10"
         >
-          <div className="w-20 h-20 rounded-2xl bg-[var(--color-surface-elevated)] border border-[var(--color-border)] flex items-center justify-center shadow-lg opacity-50">
+          <div className="w-20 h-20 rounded-2xl card-glass flex items-center justify-center shadow-deep opacity-50">
             <Brain className="w-8 h-8 text-[var(--color-text-secondary)]" />
           </div>
           <span className="text-lg font-medium text-[var(--color-text-secondary)] line-through decoration-[var(--color-border)]">Guaranteed Understanding</span>
@@ -68,28 +76,28 @@ export const Slide9OldInferenceBreaking = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 2 }}
-        className="max-w-3xl mx-auto w-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-8"
+        className="max-w-3xl mx-auto w-full card-glass rounded-2xl p-8 shadow-premium"
       >
-        <p className="text-sm uppercase tracking-widest text-[var(--color-text-tertiary)] font-semibold mb-6 text-center">
+        <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-text-tertiary)] font-medium mb-6 text-center">
           A polished artifact may now reflect:
         </p>
         <div className="grid sm:grid-cols-2 gap-4">
-          <div className="flex items-start gap-3 bg-[var(--color-surface)] p-4 rounded-xl border border-[var(--color-border)]">
+          <TiltCard className="flex items-start gap-3 bg-[var(--color-surface)] p-4 rounded-xl border border-[var(--color-border)]" tiltStrength={4}>
             <CheckCircle2 className="w-5 h-5 text-[var(--color-text-secondary)] shrink-0 mt-0.5" />
             <span className="text-[var(--color-text-primary)] font-light">Deep understanding</span>
-          </div>
-          <div className="flex items-start gap-3 bg-[var(--color-surface)] p-4 rounded-xl border border-[var(--color-border)]">
+          </TiltCard>
+          <TiltCard className="flex items-start gap-3 bg-[var(--color-surface)] p-4 rounded-xl border border-[var(--color-border)]" tiltStrength={4}>
             <Layers className="w-5 h-5 text-[var(--color-text-secondary)] shrink-0 mt-0.5" />
             <span className="text-[var(--color-text-primary)] font-light">Shallow acceptance of AI work</span>
-          </div>
-          <div className="flex items-start gap-3 bg-[var(--color-surface)] p-4 rounded-xl border border-[var(--color-border)]">
+          </TiltCard>
+          <TiltCard className="flex items-start gap-3 bg-[var(--color-surface)] p-4 rounded-xl border border-[var(--color-border)]" tiltStrength={4}>
             <UserCog className="w-5 h-5 text-[var(--color-text-secondary)] shrink-0 mt-0.5" />
             <span className="text-[var(--color-text-primary)] font-light">Careful orchestration</span>
-          </div>
-          <div className="flex items-start gap-3 bg-[var(--color-surface)] p-4 rounded-xl border border-[var(--color-border)] opacity-60">
+          </TiltCard>
+          <TiltCard className="flex items-start gap-3 bg-[var(--color-surface)] p-4 rounded-xl border border-[var(--color-border)] opacity-60" tiltStrength={4}>
             <span className="w-5 h-5 flex items-center justify-center font-bold shrink-0 mt-0.5 text-[var(--color-text-tertiary)]">+</span>
             <span className="text-[var(--color-text-secondary)] font-light italic">Some combination of the above</span>
-          </div>
+          </TiltCard>
         </div>
       </motion.div>
     </div>

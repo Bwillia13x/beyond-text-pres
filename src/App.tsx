@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { SlideWrapper } from './components/SlideWrapper';
+import { SlideWrapper, TransitionMode } from './components/SlideWrapper';
+import { SlideCounter } from './components/SlideCounter';
 import { Slide1Title } from './components/Slide1Title';
 import { Slide2Capability } from './components/Slide2Capability';
 import { Slide3FrontierAI } from './components/Slide3FrontierAI';
@@ -12,14 +13,17 @@ import { Slide7WorkflowCompression } from './components/Slide7WorkflowCompressio
 import { Slide8ExploitDemonstrates } from './components/Slide8ExploitDemonstrates';
 import { Slide9OldInferenceBreaking } from './components/Slide9OldInferenceBreaking';
 import { Slide10VerificationParadox } from './components/Slide10VerificationParadox';
-import { Slide11RedTeamingPivot } from './components/Slide11RedTeamingPivot';
-import { Slide12FourQuestions } from './components/Slide12FourQuestions';
-import { Slide13ExampleEssay } from './components/Slide13ExampleEssay';
-import { Slide14ExampleRedesign } from './components/Slide14ExampleRedesign';
-import { Slide15StudentSelfRedTeaming } from './components/Slide15StudentSelfRedTeaming';
-import { Slide16ParticipantActivity } from './components/Slide16ParticipantActivity';
-import { Slide17Debrief } from './components/Slide17Debrief';
-import { Slide18FinalTakeaway } from './components/Slide18FinalTakeaway';
+import { Slide11BeyondTextPivot } from './components/Slide11BeyondTextPivot';
+import { Slide12TwoUsesMultimodality } from './components/Slide12TwoUsesMultimodality';
+import { Slide13AssignmentArchitecture } from './components/Slide13AssignmentArchitecture';
+import { Slide14ArtifactStack } from './components/Slide14ArtifactStack';
+import { Slide15CompetenceMatrix } from './components/Slide15CompetenceMatrix';
+import { Slide16BeforeAfter } from './components/Slide16BeforeAfter';
+import { Slide17Disciplines } from './components/Slide17Disciplines';
+import { Slide18GradeConstruct } from './components/Slide18GradeConstruct';
+import { Slide19ParticipantActivity } from './components/Slide19ParticipantActivity';
+import { Slide20Debrief } from './components/Slide20Debrief';
+import { Slide21FinalTakeaway } from './components/Slide21FinalTakeaway';
 import { MagneticButton } from './components/MagneticButton';
 
 export default function App() {
@@ -32,28 +36,37 @@ export default function App() {
   const springX = useSpring(mouseX, springConfig);
   const springY = useSpring(mouseY, springConfig);
 
-  const slides = [
-    { id: 'slide1', component: <Slide1Title /> },
-    { id: 'slide2', component: <Slide2Capability /> },
-    { id: 'slide3', component: <Slide3FrontierAI /> },
-    { id: 'slide4', component: <Slide4WhyItMatters /> },
-    { id: 'slide5', component: <Slide5Threshold /> },
-    { id: 'slide6', component: <Slide6ExploitScenario /> },
-    { id: 'slide7', component: <Slide7WorkflowCompression /> },
-    { id: 'slide8', component: <Slide8ExploitDemonstrates /> },
-    { id: 'slide9', component: <Slide9OldInferenceBreaking /> },
-    { id: 'slide10', component: <Slide10VerificationParadox /> },
-    { id: 'slide11', component: <Slide11RedTeamingPivot /> },
-    { id: 'slide12', component: <Slide12FourQuestions /> },
-    { id: 'slide13', component: <Slide13ExampleEssay /> },
-    { id: 'slide14', component: <Slide14ExampleRedesign /> },
-    { id: 'slide15', component: <Slide15StudentSelfRedTeaming /> },
-    { id: 'slide16', component: <Slide16ParticipantActivity /> },
-    { id: 'slide17', component: <Slide17Debrief /> },
-    { id: 'slide18', component: <Slide18FinalTakeaway /> },
-  ];
+  const springX2 = useSpring(mouseX, { damping: 30, stiffness: 80, mass: 0.8 });
+  const springY2 = useSpring(mouseY, { damping: 30, stiffness: 80, mass: 0.8 });
+  const springX3 = useSpring(mouseX, { damping: 40, stiffness: 60, mass: 1.2 });
+  const springY3 = useSpring(mouseY, { damping: 40, stiffness: 60, mass: 1.2 });
+
+  const slides = useMemo<{ id: string; component: React.ReactNode; transition: TransitionMode }[]>(() => [
+    { id: 'slide1', component: <Slide1Title />, transition: 'fade' },
+    { id: 'slide2', component: <Slide2Capability />, transition: 'slide' },
+    { id: 'slide3', component: <Slide3FrontierAI />, transition: 'slide' },
+    { id: 'slide4', component: <Slide4WhyItMatters />, transition: 'slide' },
+    { id: 'slide5', component: <Slide5Threshold />, transition: 'fade' },
+    { id: 'slide6', component: <Slide6ExploitScenario />, transition: 'slide' },
+    { id: 'slide7', component: <Slide7WorkflowCompression />, transition: 'slide' },
+    { id: 'slide8', component: <Slide8ExploitDemonstrates />, transition: 'rise' },
+    { id: 'slide9', component: <Slide9OldInferenceBreaking />, transition: 'rise' },
+    { id: 'slide10', component: <Slide10VerificationParadox />, transition: 'rise' },
+    { id: 'slide11', component: <Slide11BeyondTextPivot />, transition: 'fade' },
+    { id: 'slide12', component: <Slide12TwoUsesMultimodality />, transition: 'slide' },
+    { id: 'slide13', component: <Slide13AssignmentArchitecture />, transition: 'slide' },
+    { id: 'slide14', component: <Slide14ArtifactStack />, transition: 'rise' },
+    { id: 'slide15', component: <Slide15CompetenceMatrix />, transition: 'slide' },
+    { id: 'slide16', component: <Slide16BeforeAfter />, transition: 'slide' },
+    { id: 'slide17', component: <Slide17Disciplines />, transition: 'slide' },
+    { id: 'slide18', component: <Slide18GradeConstruct />, transition: 'rise' },
+    { id: 'slide19', component: <Slide19ParticipantActivity />, transition: 'fade' },
+    { id: 'slide20', component: <Slide20Debrief />, transition: 'slide' },
+    { id: 'slide21', component: <Slide21FinalTakeaway />, transition: 'fade' },
+  ], []);
 
   const totalSlides = slides.length;
+  const progress = ((page) / (totalSlides - 1)) * 100;
 
   const paginate = useCallback((newDirection: number) => {
     setPage(([prevPage]) => {
@@ -83,17 +96,25 @@ export default function App() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight' || e.key === 'Space') {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
         paginate(1);
       } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
         paginate(-1);
+      } else if (e.key === 'f' || e.key === 'F') {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen?.();
+        } else {
+          document.exitFullscreen?.();
+        }
       }
     };
     
     const handleMouseMove = (e: MouseEvent) => {
       const { innerWidth, innerHeight } = window;
-      const x = (e.clientX / innerWidth - 0.5) * 40; 
-      const y = (e.clientY / innerHeight - 0.5) * 40;
+      const x = (e.clientX / innerWidth - 0.5) * 30; 
+      const y = (e.clientY / innerHeight - 0.5) * 30;
       mouseX.set(x);
       mouseY.set(y);
     };
@@ -111,71 +132,106 @@ export default function App() {
   };
 
   return (
-    <div className="relative w-full h-screen bg-[var(--color-surface)] overflow-hidden flex flex-col font-sans selection:bg-[var(--color-accent-muted)] selection:text-[var(--color-text-primary)]">
-      {/* Background Ambience */}
+    <div className="relative w-full h-screen bg-[var(--color-surface)] overflow-hidden flex flex-col font-sans">
+      {/* Top progress bar */}
+      <div className="absolute top-0 left-0 right-0 z-[60] h-px">
+        <motion.div 
+          className="h-full bg-gradient-to-r from-[var(--color-accent)] via-[var(--color-accent)] to-transparent"
+          initial={false}
+          animate={{ width: `${progress}%` }}
+          transition={{ type: "spring", stiffness: 200, damping: 30 }}
+          style={{ boxShadow: '0 0 12px var(--color-accent-muted), 0 0 4px var(--color-accent)' }}
+        />
+      </div>
+
+      {/* Background Ambience — 4-layer parallax orbs + noise + vignette */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Primary warm orb — top left */}
         <motion.div 
-          style={{ x: springX, y: springY }}
           animate={{ 
-            rotate: [0, 3, -3, 0],
-            scale: [1, 1.05, 0.95, 1],
-            opacity: [0.15, 0.25, 0.15]
+            rotate: [0, 4, -2, 0],
+            scale: [1, 1.08, 0.96, 1],
+            opacity: [0.12, 0.22, 0.12]
           }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[var(--color-accent-subtle)] blur-[150px]" 
+          transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+          className="absolute top-[-25%] left-[-15%] w-[55%] h-[55%] rounded-full blur-[180px]"
+          style={{ x: springX, y: springY, background: 'radial-gradient(circle, rgba(245,160,138,0.18) 0%, rgba(245,160,138,0.04) 60%, transparent 100%)' }}
         />
+        {/* Secondary cool orb — bottom right */}
         <motion.div 
-          style={{ x: useSpring(mouseX, { damping: 30, stiffness: 80, mass: 0.8 }), y: useSpring(mouseY, { damping: 30, stiffness: 80, mass: 0.8 }) }}
           animate={{ 
-            rotate: [0, -3, 3, 0],
-            scale: [1, 0.95, 1.05, 1],
-            opacity: [0.1, 0.2, 0.1]
+            rotate: [0, -3, 4, 0],
+            scale: [1, 0.94, 1.06, 1],
+            opacity: [0.08, 0.16, 0.08]
           }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[var(--color-secondary-subtle)] blur-[150px]" 
+          transition={{ duration: 34, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-[-25%] right-[-15%] w-[55%] h-[55%] rounded-full blur-[180px]"
+          style={{ x: springX2, y: springY2, background: 'radial-gradient(circle, rgba(110,231,183,0.14) 0%, rgba(110,231,183,0.03) 60%, transparent 100%)' }}
         />
+        {/* Tertiary blue accent orb — center right, subtle */}
+        <motion.div 
+          animate={{ 
+            rotate: [0, 2, -3, 0],
+            scale: [1, 1.04, 0.98, 1],
+            opacity: [0.05, 0.10, 0.05]
+          }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          className="absolute top-[10%] right-[-5%] w-[40%] h-[40%] rounded-full blur-[200px]"
+          style={{ x: springX3, y: springY3, background: 'radial-gradient(circle, rgba(147,197,253,0.10) 0%, transparent 70%)' }}
+        />
+        {/* Deep warm undertone — bottom center */}
         <motion.div
-          animate={{ opacity: [0.03, 0.06, 0.03] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 mix-blend-overlay"
+          animate={{ 
+            opacity: [0.04, 0.08, 0.04],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-[-10%] left-[20%] w-[60%] h-[30%] rounded-full blur-[160px]"
+          style={{ background: 'radial-gradient(circle, rgba(245,160,138,0.08) 0%, transparent 70%)' }}
         />
+        {/* Film grain noise */}
+        <div className="absolute inset-0 noise-overlay opacity-[0.035] mix-blend-overlay" />
+        {/* Vignette */}
+        <div className="absolute inset-0 vignette opacity-60" />
       </div>
 
       {/* Main Content Area */}
       <main className="relative z-10 flex-1 w-full h-full">
         <AnimatePresence initial={false} custom={direction} mode="wait">
-          <SlideWrapper key={page} direction={direction}>
+          <SlideWrapper key={page} direction={direction} transitionMode={slides[page]?.transition ?? 'slide'}>
             {renderSlide()}
           </SlideWrapper>
         </AnimatePresence>
       </main>
 
       {/* Navigation Controls */}
-      <div className="absolute bottom-8 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 pointer-events-none">
-        <div className="flex items-center gap-5 pointer-events-auto">
+      <div className="absolute bottom-6 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 pointer-events-none">
+        <div className="flex items-center gap-4 pointer-events-auto">
           <MagneticButton 
             onClick={() => paginate(-1)}
             disabled={page === 0}
-            className="p-3 rounded-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-accent-muted)] hover:shadow-[0_0_20px_var(--color-accent-subtle)] disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300"
+            className="p-2.5 rounded-full card-glass text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-accent-muted)] disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-500"
             ariaLabel="Previous slide"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-4 h-4" />
           </MagneticButton>
           
-          <div className="flex gap-1.5 md:gap-3 max-w-[40vw] md:max-w-[50vw] overflow-x-auto px-2 py-2 hide-scrollbar mask-edges">
+          <div ref={paginationRef} className="flex gap-1.5 md:gap-2 max-w-[40vw] md:max-w-[50vw] overflow-x-auto px-2 py-2 hide-scrollbar mask-edges">
             {slides.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setPage([idx, idx > page ? 1 : -1])}
-                className={`flex-shrink-0 h-2 rounded-full transition-all duration-700 ease-out relative group ${
+                className={`flex-shrink-0 rounded-full transition-all duration-700 ease-out relative ${
                   idx === page 
-                    ? 'bg-[var(--color-accent)] w-8 shadow-[0_0_10px_var(--color-accent-muted)]' 
-                    : 'bg-[var(--color-border)] hover:bg-[var(--color-text-tertiary)] w-2 hover:scale-125'
+                    ? 'bg-[var(--color-accent)] w-7 h-1.5 shadow-[0_0_12px_var(--color-accent-muted)]' 
+                    : idx < page
+                      ? 'bg-[var(--color-accent)] opacity-30 w-1.5 h-1.5 hover:opacity-60'
+                      : 'bg-[var(--color-border)] w-1.5 h-1.5 hover:bg-[var(--color-text-tertiary)]'
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               >
                 {idx === page && (
-                  <motion.div layoutId="activePagination" className="absolute inset-x-0 -bottom-1 h-0.5 bg-[var(--color-accent)] opacity-50 blur-sm rounded-full" />
+                  <motion.div layoutId="activePagination" className="absolute inset-x-0 -bottom-1 h-0.5 bg-[var(--color-accent)] opacity-40 blur-sm rounded-full" />
                 )}
               </button>
             ))}
@@ -184,15 +240,15 @@ export default function App() {
           <MagneticButton 
             onClick={() => paginate(1)}
             disabled={page === totalSlides - 1}
-            className="p-3 rounded-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-accent-muted)] hover:shadow-[0_0_20px_var(--color-accent-subtle)] disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300"
+            className="p-2.5 rounded-full card-glass text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-accent-muted)] disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-500"
             ariaLabel="Next slide"
           >
-            <ChevronRight className="w-5 h-5 relative z-10" />
+            <ChevronRight className="w-4 h-4" />
           </MagneticButton>
         </div>
 
-        <div className="hidden md:block text-[var(--color-text-tertiary)] font-mono text-xs tracking-widest uppercase">
-          {page + 1} / {totalSlides}
+        <div className="hidden md:flex items-center gap-3 pointer-events-auto">
+          <SlideCounter current={page} total={totalSlides} />
         </div>
       </div>
       

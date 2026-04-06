@@ -17,7 +17,7 @@ export const Slide7WorkflowCompression = () => {
         transition={{ duration: 0.8 }}
         className="text-center w-full mb-10"
       >
-        <h2 className="text-4xl md:text-5xl font-light text-[var(--color-text-primary)] tracking-tight">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           Day-one workflow compression
         </h2>
         <p className="mt-4 text-lg text-[var(--color-text-secondary)] font-light">
@@ -32,9 +32,9 @@ export const Slide7WorkflowCompression = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex-1 bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 flex flex-col"
+          className="flex-1 card-glass rounded-2xl p-6 flex flex-col shadow-premium"
         >
-          <div className="flex items-center gap-2 text-[var(--color-text-tertiary)] uppercase tracking-widest text-xs font-semibold mb-6">
+          <div className="flex items-center gap-2 text-[var(--color-text-tertiary)] uppercase tracking-[0.15em] text-[10px] font-medium mb-6">
             <Filter className="w-4 h-4" /> Student Uploads
           </div>
           <div className="flex flex-wrap gap-2 text-sm font-light text-[var(--color-text-secondary)]">
@@ -54,7 +54,7 @@ export const Slide7WorkflowCompression = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 + idx * 0.15 }}
-              className="bg-[var(--color-accent-subtle)] border border-[var(--color-accent-muted)] rounded-2xl p-5 flex flex-col sm:flex-row items-center gap-6"
+              className="card-glass-accent rounded-2xl p-5 flex flex-col sm:flex-row items-center gap-6"
             >
               {/* Course Identity */}
               <div className="flex items-center gap-3 shrink-0 sm:w-1/4">

@@ -22,10 +22,10 @@ export const Slide13AssignmentArchitecture = () => {
         transition={{ duration: 0.8 }}
         className="text-center w-full mb-12"
       >
-        <span className="text-[var(--color-accent)] uppercase tracking-widest text-xs font-semibold mb-4 block">
+        <span className="text-[var(--color-accent)] uppercase tracking-[0.2em] text-[11px] font-medium mb-5 block opacity-80">
           Assignment Architecture
         </span>
-        <h2 className="text-4xl md:text-5xl font-light text-[var(--color-text-primary)] tracking-tight">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-[var(--color-text-primary)] tracking-[-0.03em]">
           Design the task, not just the check
         </h2>
       </motion.div>
@@ -42,7 +42,7 @@ export const Slide13AssignmentArchitecture = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 + idx * 0.08 }}
-            className="bg-[var(--color-surface-elevated)] p-6 rounded-2xl border border-[var(--color-border)] flex flex-col items-center text-center gap-3 hover:border-[var(--color-accent-muted)] transition-colors duration-300"
+            className="card-glass p-6 rounded-2xl flex flex-col items-center text-center gap-3 hover:border-[var(--color-accent-muted)] transition-all duration-500 shadow-premium hover:shadow-deep"
           >
             <div className="w-10 h-10 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] flex items-center justify-center">
               <item.icon className="w-5 h-5 text-[var(--color-text-tertiary)]" />
@@ -58,9 +58,9 @@ export const Slide13AssignmentArchitecture = () => {
         transition={{ duration: 0.8, delay: 1 }}
         className="text-center max-w-3xl mx-auto"
       >
-        <p className="text-2xl md:text-3xl text-[var(--color-text-primary)] font-light leading-snug">
+        <p className="text-2xl md:text-3xl text-[var(--color-text-primary)] font-extralight leading-snug tracking-[-0.01em]">
           The goal is not more media.<br/>
-          <span className="text-[var(--color-accent)] font-normal mt-3 inline-block">The goal is purposeful output diversity.</span>
+          <span className="text-gradient-accent font-light mt-3 inline-block">The goal is purposeful output diversity.</span>
         </p>
       </motion.div>
     </div>
